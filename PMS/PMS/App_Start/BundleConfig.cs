@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace PMS
+namespace PMS_DAL
 {
     public class BundleConfig
     {

@@ -1,0 +1,13 @@
+E:\Uwpproductmanagement\PMS\PMS\PMS_DAL\bin\Debug\PMS_DAL.dll.config
+E:\Uwpproductmanagement\PMS\PMS\PMS_DAL\bin\Debug\PMS_DAL.dll
+E:\Uwpproductmanagement\PMS\PMS\PMS_DAL\bin\Debug\PMS_DAL.pdb
+E:\Uwpproductmanagement\PMS\PMS\PMS_DAL\bin\Debug\EntityFramework.dll
+E:\Uwpproductmanagement\PMS\PMS\PMS_DAL\bin\Debug\EntityFramework.SqlServer.dll
+E:\Uwpproductmanagement\PMS\PMS\PMS_DAL\bin\Debug\EntityFramework.xml
+E:\Uwpproductmanagement\PMS\PMS\PMS_DAL\bin\Debug\EntityFramework.SqlServer.xml
+E:\Uwpproductmanagement\PMS\PMS\PMS_DAL\obj\Debug\PMS_DAL.csproj.CoreCompileInputs.cache
+E:\Uwpproductmanagement\PMS\PMS\PMS_DAL\obj\Debug\PMS_DAL.csproj.CopyComplete
+E:\Uwpproductmanagement\PMS\PMS\PMS_DAL\obj\Debug\PMS_DAL.dll
+E:\Uwpproductmanagement\PMS\PMS\PMS_DAL\obj\Debug\PMS_DAL.pdb
+E:\Uwpproductmanagement\PMS\PMS\PMS_DAL\obj\Debug\PMS_DAL.Migrations.initial.resources
+E:\Uwpproductmanagement\PMS\PMS\PMS_DAL\obj\Debug\PMS_DAL.csproj.GenerateResource.cache
