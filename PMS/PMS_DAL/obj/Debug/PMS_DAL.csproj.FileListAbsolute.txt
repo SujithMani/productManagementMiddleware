@@ -26,3 +26,5 @@ E:\Attinad_Projects\Product_Management\PMS\PMS_DAL\obj\Debug\PMS_DAL.csproj.Copy
 E:\Attinad_Projects\Product_Management\PMS\PMS_DAL\obj\Debug\PMS_DAL.dll
 E:\Attinad_Projects\Product_Management\PMS\PMS_DAL\obj\Debug\PMS_DAL.pdb
 E:\Attinad_Projects\Product_Management\PMS\PMS_DAL\obj\Debug\PMS_DAL.Migrations.client_tables.resources
+E:\Uwpproductmanagement\PMS\PMS\PMS_DAL\obj\Debug\PMS_DAL.csprojAssemblyReference.cache
+E:\Uwpproductmanagement\PMS\PMS\PMS_DAL\obj\Debug\PMS_DAL.Migrations.client_tables.resources

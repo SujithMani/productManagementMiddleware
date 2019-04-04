@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PMS_DAL;
+using PMS_DAL.Models;
 
 namespace PMS.Controllers
 {
@@ -10,6 +12,18 @@ namespace PMS.Controllers
     {
         public ActionResult Index()
         {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Index(User_Registration users)
+        {
+            var username = users.FirstName;
+            if (ModelState.IsValid)
+            {
+
+                // Authenticate user, pass values to db
+            }
+
             return View();
         }
 
@@ -24,6 +38,10 @@ namespace PMS.Controllers
         {
             ViewBag.Message = "Your contact page.";
 
+            return View();
+        }
+        public ActionResult Login()
+        {
             return View();
         }
     }

@@ -9,7 +9,7 @@ namespace PMS
     {
         // Your context has been configured to use a 'Context' connection string from your application's 
         // configuration file (App.config or Web.config). By default, this connection string targets the 
-        // 'PMS_DAL.Context' database on your LocalDb instance. 
+        // 'PMS_DAL_DAL.Context' database on your LocalDb instance. 
         // 
         // If you wish to target a different database and/or database provider, modify the 'Context' 
         // connection string in the application configuration file.
