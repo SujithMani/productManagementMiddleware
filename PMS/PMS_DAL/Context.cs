@@ -1,9 +1,9 @@
-namespace PMS_DAL
+namespace PMS
 {
     using System;
     using System.Data.Entity;
     using System.Linq;
-    using PMS_DAL.Models;
+    using PMS.Models;
 
     public class Context : DbContext
     {
