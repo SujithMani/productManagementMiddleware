@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace PMS_DAL
+namespace PMS
 {
     public class FilterConfig
     {

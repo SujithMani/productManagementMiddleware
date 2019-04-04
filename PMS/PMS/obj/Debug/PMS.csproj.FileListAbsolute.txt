@@ -77,7 +77,6 @@ E:\Uwpproductmanagement\PMS\PMS\PMS\bin\Antlr3.Runtime.pdb
 E:\Uwpproductmanagement\PMS\PMS\PMS\bin\System.Diagnostics.DiagnosticSource.xml
 E:\Uwpproductmanagement\PMS\PMS\PMS\bin\Microsoft.AspNet.TelemetryCorrelation.xml
 E:\Uwpproductmanagement\PMS\PMS\PMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-E:\Uwpproductmanagement\PMS\PMS\PMS\obj\Debug\PMS.csprojAssemblyReference.cache
 E:\Uwpproductmanagement\PMS\PMS\PMS\obj\Debug\PMS.csproj.CoreCompileInputs.cache
 E:\Uwpproductmanagement\PMS\PMS\PMS\obj\Debug\PMS.csproj.CopyComplete
 E:\Uwpproductmanagement\PMS\PMS\PMS\obj\Debug\PMS.dll
@@ -166,3 +165,7 @@ E:\Attinad_Projects\Product_Management\PMS\PMS\bin\System.Diagnostics.Diagnostic
 E:\Attinad_Projects\Product_Management\PMS\PMS\bin\Microsoft.AspNet.TelemetryCorrelation.xml
 E:\Attinad_Projects\Product_Management\PMS\PMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 E:\Attinad_Projects\Product_Management\PMS\PMS\obj\Debug\PMS.csproj.CopyComplete
+E:\Uwpproductmanagement\PMS\PMS\PMS\obj\Debug\PMS.csprojAssemblyReference.cache
+E:\Uwpproductmanagement\PMS\PMS\PMS\bin\PMS_DAL.dll
+E:\Uwpproductmanagement\PMS\PMS\PMS\bin\PMS_DAL.pdb
+E:\Uwpproductmanagement\PMS\PMS\PMS\bin\PMS_DAL.dll.config
