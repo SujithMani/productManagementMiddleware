@@ -1,0 +1,12 @@
+E:\Uwpproductmanagement\PMS\PMS\PMS_SERVICE\bin\Debug\PMS_SERVICE.dll
+E:\Uwpproductmanagement\PMS\PMS\PMS_SERVICE\bin\Debug\PMS_SERVICE.pdb
+E:\Uwpproductmanagement\PMS\PMS\PMS_SERVICE\bin\Debug\PMS_DAL.dll
+E:\Uwpproductmanagement\PMS\PMS\PMS_SERVICE\bin\Debug\EntityFramework.dll
+E:\Uwpproductmanagement\PMS\PMS\PMS_SERVICE\bin\Debug\PMS_DAL.pdb
+E:\Uwpproductmanagement\PMS\PMS\PMS_SERVICE\bin\Debug\PMS_DAL.dll.config
+E:\Uwpproductmanagement\PMS\PMS\PMS_SERVICE\bin\Debug\EntityFramework.xml
+E:\Uwpproductmanagement\PMS\PMS\PMS_SERVICE\obj\Debug\PMS_SERVICE.csprojAssemblyReference.cache
+E:\Uwpproductmanagement\PMS\PMS\PMS_SERVICE\obj\Debug\PMS_SERVICE.csproj.CoreCompileInputs.cache
+E:\Uwpproductmanagement\PMS\PMS\PMS_SERVICE\obj\Debug\PMS_SERVICE.csproj.CopyComplete
+E:\Uwpproductmanagement\PMS\PMS\PMS_SERVICE\obj\Debug\PMS_SERVICE.dll
+E:\Uwpproductmanagement\PMS\PMS\PMS_SERVICE\obj\Debug\PMS_SERVICE.pdb

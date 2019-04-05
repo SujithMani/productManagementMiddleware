@@ -169,3 +169,5 @@ E:\Uwpproductmanagement\PMS\PMS\PMS\obj\Debug\PMS.csprojAssemblyReference.cache
 E:\Uwpproductmanagement\PMS\PMS\PMS\bin\PMS_DAL.dll
 E:\Uwpproductmanagement\PMS\PMS\PMS\bin\PMS_DAL.pdb
 E:\Uwpproductmanagement\PMS\PMS\PMS\bin\PMS_DAL.dll.config
+E:\Uwpproductmanagement\PMS\PMS\PMS\bin\PMS_SERVICE.dll
+E:\Uwpproductmanagement\PMS\PMS\PMS\bin\PMS_SERVICE.pdb

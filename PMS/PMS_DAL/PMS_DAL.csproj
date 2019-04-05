@@ -78,6 +78,19 @@
     <Compile Include="Models\Users_Invoice.cs" />
     <Compile Include="Models\User_Registration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\AdminDetailsRepository.cs" />
+    <Compile Include="Repository\AdminUserPrivilegeRepository.cs" />
+    <Compile Include="Repository\AdminUserRoleRepository.cs" />
+    <Compile Include="Repository\InvokerProductUpdateRepository.cs" />
+    <Compile Include="Repository\MainCategoryProductRepository.cs" />
+    <Compile Include="Repository\MainCategoryRepository.cs" />
+    <Compile Include="Repository\OfferProductRepository.cs" />
+    <Compile Include="Repository\OfferRepository.cs" />
+    <Compile Include="Repository\PageDetailsRepository.cs" />
+    <Compile Include="Repository\PrivilegeRepository.cs" />
+    <Compile Include="Repository\ProductRepository.cs" />
+    <Compile Include="Repository\RolePrivillageRepository.cs" />
+    <Compile Include="Repository\RoleRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

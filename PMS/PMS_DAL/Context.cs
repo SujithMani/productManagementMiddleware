@@ -16,8 +16,9 @@ namespace PMS_DAL
         public Context()
             : base("name=Context")
         {
+            this.Configuration.LazyLoadingEnabled = true;            
         }
-
+      
         // Add a DbSet for each entity type that you want to include in your model. For more information 
         // on configuring and using a Code First model, see http://go.microsoft.com/fwlink/?LinkId=390109.
 
@@ -38,6 +39,19 @@ namespace PMS_DAL
         public virtual DbSet<Products_Cart> Products_Cart { get; set; }
         public virtual DbSet<Users_Invoice> Users_Invoice { get; set; }
         public virtual DbSet<Product_Check_Out> Product_Check_Out { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<AdminDetails>()
+                .HasMany(e => e.AdminUserRoles)
+                .WithOptional(e => e.User)
+                .HasForeignKey(e => e.AdminUserId);
+
+            modelBuilder.Entity<AdminDetails>()
+                .HasMany(e => e.AdminUserPrivileges)
+                .WithOptional(e => e.AdminDetail)
+                .HasForeignKey(e => e.AdminUserId);
+        }
     }
 
     //public class MyEntity

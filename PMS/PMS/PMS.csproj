@@ -197,6 +197,10 @@
       <Project>{b5c0587a-7938-450f-85e1-701aa0e33b05}</Project>
       <Name>PMS_DAL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PMS_SERVICE\PMS_SERVICE.csproj">
+      <Project>{abc330c6-aa46-46d0-b1a1-63241a484f32}</Project>
+      <Name>PMS_SERVICE</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
