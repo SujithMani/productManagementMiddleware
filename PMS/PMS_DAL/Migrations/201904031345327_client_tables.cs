@@ -1,4 +1,4 @@
-namespace PMS_DAL.Migrations
+namespace PMS.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;

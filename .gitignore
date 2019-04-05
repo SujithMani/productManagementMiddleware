@@ -1,2 +1,7 @@
 PMS/.vs/PMS/v15/
 PMS/sdf/
+PMS/PMS_Client/bin/
+PMS/PMS_Client/obj/Debug/PMS_Client.dll
+PMS/PMS_Client/obj/Debug/PMS_Client.pdb
+PMS/PMS_Client/obj/
+PMS/PMS_DAL/obj/
