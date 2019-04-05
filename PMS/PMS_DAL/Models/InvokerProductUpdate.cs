@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
-namespace PMS.Models
+namespace PMS_DAL.Models
 {
     public class InvokerProductUpdate
     {

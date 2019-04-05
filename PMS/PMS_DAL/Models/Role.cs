@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace PMS.Models
+namespace PMS_DAL.Models
 {
     public class Role
     {

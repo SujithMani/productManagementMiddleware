@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace PMS.Models
+namespace PMS_DAL.Models
 {
     public class User_Registration
     {
