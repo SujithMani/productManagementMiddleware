@@ -44,12 +44,12 @@ namespace PMS_DAL
         {
             modelBuilder.Entity<AdminDetails>()
                 .HasMany(e => e.AdminUserRoles)
-                .WithOptional(e => e.User)
+                .WithRequired(e => e.User)
                 .HasForeignKey(e => e.AdminUserId);
 
             modelBuilder.Entity<AdminDetails>()
                 .HasMany(e => e.AdminUserPrivileges)
-                .WithOptional(e => e.AdminDetail)
+                .WithRequired(e => e.AdminDetail)
                 .HasForeignKey(e => e.AdminUserId);
         }
     }

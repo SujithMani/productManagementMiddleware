@@ -7,7 +7,7 @@ using PMS_DAL.Models;
 
 namespace PMS_DAL.Repository
 {
-    class AdminUserPrivilegeRepository
+    public class AdminUserPrivilegeRepository
     {
 
         Context DB = new Context();

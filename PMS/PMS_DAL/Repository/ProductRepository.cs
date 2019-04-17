@@ -7,7 +7,7 @@ using PMS_DAL.Models;
 
 namespace PMS_DAL.Repository
 {
-    class ProductRepository
+    public class ProductRepository
     {
         private Context DB = new Context();
 

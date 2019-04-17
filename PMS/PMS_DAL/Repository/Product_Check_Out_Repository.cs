@@ -10,13 +10,13 @@ namespace PMS_DAL.Repository
     {
         private Context DB = new Context();
         
-        public bool Product_Create(Product_Check_Out pdt)
-        {
-            if(pdt.Id!=0)
-            {
+        //public bool Product_Create(Product_Check_Out pdt)
+        //{
+        //    if(pdt.Id!=0)
+        //    {
 
-            }
-            return true;
-        }
+        //    }
+        //    return true;
+        //}
     }
 }

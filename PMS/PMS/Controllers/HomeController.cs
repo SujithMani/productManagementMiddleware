@@ -3,28 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using PMS_DAL;
+using PMS_SERVICE.Services;
 using PMS_DAL.Models;
-
 namespace PMS.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        public List<AdminDetails> Index()
         {
-            return View();
-        }
-        [HttpPost]
-        public ActionResult Index(User_Registration users)
-        {
-            var username = users.FirstName;
-            if (ModelState.IsValid)
-            {
-
-                // Authenticate user, pass values to db
-            }
-
-            return View();
+            AdminDetailsService adminservice = new AdminDetailsService();
+            List<AdminDetails> adminDetails = adminservice.GetAdminDetails();
+            //foreach(AdminDetails adm in adminDetails)
+            //{
+                
+            //}
+            return adminDetails;
         }
 
         public ActionResult About()
