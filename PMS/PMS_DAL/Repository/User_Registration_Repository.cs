@@ -18,9 +18,9 @@ namespace PMS_DAL.Repository
         {
             try
             {
+                //Update
                 if (user.Id != 0)
-                {
-                    //Update
+                {                  
                     User_Registration old_User = DB.User_Registration.Find(user.Id);
                     old_User.FirstName = user.FirstName;
                     old_User.LastName = user.LastName;
@@ -28,6 +28,7 @@ namespace PMS_DAL.Repository
                     old_User.User_Email_Id = user.User_Email_Id;
                     old_User.User_Address = user.User_Address;
                     old_User.User_Password = user.User_Password;
+                    old_User.Confirm_Password = user.Confirm_Password;
                     DB.SaveChanges();
                     return true;
                 }
@@ -44,8 +45,9 @@ namespace PMS_DAL.Repository
             {
                 return false;
             }
-            //Read all ID's
         }
+
+        //Read all ID's
         public List<User_Registration> User_ReadAll()
         {
             try

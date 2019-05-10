@@ -127,7 +127,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\RegistrationPage.cs" />
+    <Compile Include="Controllers\RegistrationpageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -170,6 +170,18 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\RegistrationPage\Registration.cshtml" />
+    <Content Include="Views\RegistrationPage\Index.cshtml" />
+    <Content Include="Views\Home\PMS.cshtml" />
+    <Content Include="Views\Home\Shoe.cshtml" />
+    <Content Include="Views\Home\Electronic.cshtml" />
+    <Content Include="Views\Home\Sneaker.cshtml" />
+    <Content Include="Views\Home\Appliance.cshtml" />
+    <Content Include="Views\Home\Mobile.cshtml" />
+    <Content Include="Views\Home\TandB.cshtml" />
+    <Content Include="Views\Home\Stationary.cshtml" />
+    <Content Include="Views\Home\FandB.cshtml" />
+    <Content Include="Views\Home\HomeGadget.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

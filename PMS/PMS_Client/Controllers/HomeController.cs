@@ -11,16 +11,17 @@ namespace PMS_Client.Controllers
         public ActionResult Index()
         {
             return View();
+           // Response.Redirect("~/Registration.aspx");
         }
 
-        public ActionResult About()
+        public ActionResult PMS()
         {
             ViewBag.Message = "Your application description page.";
 
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Shoe()
         {
             ViewBag.Message = "Your contact page.";
 
@@ -28,5 +29,65 @@ namespace PMS_Client.Controllers
         }
 
 
+        public ActionResult Electronic()
+        {
+            ViewBag.Message = "Your application description page.";
+
+            return View();
+        }
+
+        public ActionResult Sneaker()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+
+        public ActionResult HomeGadget()
+        {
+            ViewBag.Message = "Your application description page.";
+
+            return View();
+        }
+
+        public ActionResult Appliance()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+
+        public ActionResult Mobile()
+        {
+            ViewBag.Message = "Your application description page.";
+
+            return View();
+        }
+
+        public ActionResult TandB()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+
+        public ActionResult Stationary()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+        public ActionResult FandB()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+        public ActionResult Login()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
     }
 }
