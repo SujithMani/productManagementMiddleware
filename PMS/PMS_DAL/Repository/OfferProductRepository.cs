@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using PMS_DAL.Models;
 namespace PMS_DAL.Repository
 {
-    class OfferProductRepository
+    public class OfferProductRepository
     {
 
         Context DB = new Context();

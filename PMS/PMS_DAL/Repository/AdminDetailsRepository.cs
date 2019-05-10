@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PMS_DAL.Repository
 {
-    class AdminDetailsRepository
+    public class AdminDetailsRepository
     {
 
         private Context DB = new Context();
@@ -21,7 +21,7 @@ namespace PMS_DAL.Repository
                 //adminDetails.ForEach(it => it.AdminUserRoles = DB.AdminUserRole.Where(itr => itr.AdminUserId == it.Id).ToList());
                 return adminDetails;
             }
-            catch
+            catch(Exception e)
             {
                 return null;
             }

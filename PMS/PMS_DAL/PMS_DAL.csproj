@@ -59,6 +59,10 @@
     <Compile Include="Migrations\201904031345327_client_tables.Designer.cs">
       <DependentUpon>201904031345327_client_tables.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904121119398_foreignkey.cs" />
+    <Compile Include="Migrations\201904121119398_foreignkey.Designer.cs">
+      <DependentUpon>201904121119398_foreignkey.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AdminDetails.cs" />
     <Compile Include="Models\AdminUserPrivilege.cs" />
@@ -107,6 +111,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904031345327_client_tables.resx">
       <DependentUpon>201904031345327_client_tables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904121119398_foreignkey.resx">
+      <DependentUpon>201904121119398_foreignkey.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
