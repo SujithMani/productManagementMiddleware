@@ -23,6 +23,18 @@ namespace PMS_DAL.Repository
                 return null;
             }
         }
+        public Role GetSingleRole(int id)
+        {
+            try
+            {
+                Role Role = DB.Role.Find(id);
+                return Role;
+            }
+            catch
+            {
+                return null;
+            }
+        }
         public bool InsertRole(Role RoleDetails)
         {
             int CurrentId = RoleDetails.Id;

@@ -1,4 +1,4 @@
-﻿@model PMS_DAL.Models.User_Registration
+﻿@model PMS_DAL.Models.LoginDetails
 @{
     ViewBag.Title = "Admin Login";
 }
@@ -9,19 +9,24 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-12">
-            <div class="col-lg-6">
+            <div class="col-lg-6 col-lg-offset-4">
                 @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { @class = "form-horizontal" }))
                 {
+                    @Html.AntiForgeryToken()
                     <div class="form-group">
-                        @Html.Label("StudentName", "Student-Name")
-                        @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(m => m.FirstName, "", new { @class = "text-danger" })
+                        @Html.Label("Username", "Username")
+                        @Html.TextBoxFor(s => s.Username, new { @class = "form-control", placeholder = "Username" })
+                        @Html.ValidationMessageFor(m => m.Username, "", new { @class = "text-danger" })
                     </div>
                     <div class="form-group">
                         @Html.Label("Password", "Password")
-                        @Html.TextBox("Password", null, new { placeholder = "Password", @class = "form-control" })
+                        @Html.PasswordFor(m => m.Password, new { placeholder = "Password", @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
                     </div>
-                    <button type="submit" value="Login">Login</button>
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Login" class="btn btn-success" />
+                    </div>
                 }
             </div>
         </div>

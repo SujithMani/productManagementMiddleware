@@ -15,5 +15,11 @@ namespace PMS_SERVICE.Services
             List<AdminDetails> adminDetails = adminrepo.GetAllAdminDetails();
             return adminDetails;
         }
+
+        public bool GetAdminByNameAndPassword(LoginDetails user)
+        {
+            bool result = adminrepo.GetAdminByNameAndPassword(user);
+            return result;
+        }
     }
 }

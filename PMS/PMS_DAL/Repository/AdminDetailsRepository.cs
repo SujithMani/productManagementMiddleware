@@ -26,6 +26,34 @@ namespace PMS_DAL.Repository
                 return null;
             }
         }
+        public bool GetAdminByNameAndPassword(LoginDetails AdminDetails)
+        {
+            string name = AdminDetails.Username;
+            string pass = AdminDetails.Password;
+            try
+            {
+                if(name != null && pass !=null)
+                {
+                    AdminDetails adminDetails = DB.AdminDetails.Where(a => a.Username == name && a.Password == pass).FirstOrDefault();
+                    if (adminDetails != null)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch(Exception e)
+            {
+                return false;
+            }
+        }
         public bool InsertAdminDetails(AdminDetails AdminDetails)
         {
             int CurrentId = AdminDetails.Id;

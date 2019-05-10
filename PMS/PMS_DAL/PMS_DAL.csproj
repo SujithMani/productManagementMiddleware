@@ -63,11 +63,16 @@
     <Compile Include="Migrations\201904121119398_foreignkey.Designer.cs">
       <DependentUpon>201904121119398_foreignkey.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905100619234_RoleModel_Updated.cs" />
+    <Compile Include="Migrations\201905100619234_RoleModel_Updated.Designer.cs">
+      <DependentUpon>201905100619234_RoleModel_Updated.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AdminDetails.cs" />
     <Compile Include="Models\AdminUserPrivilege.cs" />
     <Compile Include="Models\AdminUserRole.cs" />
     <Compile Include="Models\InvokerProductUpdate.cs" />
+    <Compile Include="Models\LoginDetails.cs" />
     <Compile Include="Models\MainCategory.cs" />
     <Compile Include="Models\MainCategoryProduct.cs" />
     <Compile Include="Models\Offer.cs" />
@@ -113,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904121119398_foreignkey.resx">
       <DependentUpon>201904121119398_foreignkey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905100619234_RoleModel_Updated.resx">
+      <DependentUpon>201905100619234_RoleModel_Updated.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
