@@ -25,5 +25,10 @@ namespace PMS_SERVICE.Services
             Role role = Roles.GetSingleRole(id);
             return role;
         }
+        public bool DeleteRole(int id)
+        {
+            bool role = Roles.DeleteRole(id);
+            return role;
+        }
     }
 }

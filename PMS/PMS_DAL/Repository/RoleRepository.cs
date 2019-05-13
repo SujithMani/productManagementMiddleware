@@ -44,6 +44,7 @@ namespace PMS_DAL.Repository
                 {
                     Role RoleDetailsById = DB.Role.Find(CurrentId);
                     RoleDetailsById.RoleName = RoleDetails.RoleName;
+                    RoleDetailsById.Status = RoleDetails.Status;
                     DB.SaveChanges();
                     return true;
                 }

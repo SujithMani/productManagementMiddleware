@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PMS_DAL.Models
+namespace PMS.ViewModels
 {
     public class LoginDetails
     {

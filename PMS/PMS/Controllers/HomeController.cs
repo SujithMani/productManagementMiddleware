@@ -4,7 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using PMS_SERVICE.Services;
-using PMS_DAL.Models;
+using PMS.Controllers;
+using PMS.ViewModels;
+
 namespace PMS.Controllers
 {
     public class HomeController : Controller

@@ -72,7 +72,6 @@
     <Compile Include="Models\AdminUserPrivilege.cs" />
     <Compile Include="Models\AdminUserRole.cs" />
     <Compile Include="Models\InvokerProductUpdate.cs" />
-    <Compile Include="Models\LoginDetails.cs" />
     <Compile Include="Models\MainCategory.cs" />
     <Compile Include="Models\MainCategoryProduct.cs" />
     <Compile Include="Models\Offer.cs" />

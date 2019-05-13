@@ -54,7 +54,7 @@ namespace PMS.Controllers
                     {
                         TempData["success"] = "Data Not Inserted Successfully";
                     }
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "Role");
                 }
                 else
                 {
@@ -69,7 +69,81 @@ namespace PMS.Controllers
         public ActionResult Edit(int id)
         {
             Role role = roleDetailService.GetSingleRole(id);
-            return View(role);
+            return View("Edit", "_LayoutAdmin", role);
+        }
+        [ValidateAntiForgeryToken]
+        [HttpPost]
+        public ActionResult Edit(Role role)
+        {
+            if (Session["username"] != null)
+            {
+                if (ModelState.IsValid)
+                {
+                    bool result = roleDetailService.InsertRole(role);
+                    if (result)
+                    {
+                        TempData["success"] = "Data Updated Successfully";
+                    }
+                    else
+                    {
+                        TempData["success"] = "Data Not Updated Successfully";
+                    }
+                    return RedirectToAction("Index", "Role");
+                }
+                else
+                {
+                    return View("Edit", "_LayoutAdmin", role);
+                }
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
+        }
+        public ActionResult Details(int id)
+        {
+            if (Session["username"] != null)
+            {
+               
+                    Role result = roleDetailService.GetSingleRole(id);
+                    if (result != null)
+                    {
+                    return View("Details", "_LayoutAdmin", result);
+                }
+                    else
+                    {
+                    return RedirectToAction("Index", "Role");
+                }
+                  
+                    
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
+        }
+        public ActionResult Delete(int id)
+        {
+            if (Session["username"] != null)
+            {
+
+                bool result = roleDetailService.DeleteRole(id);
+                if (result)
+                {
+                    TempData["success"] = "Data Deleted Successfully";
+                }
+                else
+                {
+                    TempData["success"] = "Data Not Deleted Successfully";
+                }
+                return RedirectToAction("Index", "Role");
+
+
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
         }
     }
 }
