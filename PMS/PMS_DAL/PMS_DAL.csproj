@@ -67,6 +67,22 @@
     <Compile Include="Migrations\201905100619234_RoleModel_Updated.Designer.cs">
       <DependentUpon>201905100619234_RoleModel_Updated.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905141003425_Db_update.cs" />
+    <Compile Include="Migrations\201905141003425_Db_update.Designer.cs">
+      <DependentUpon>201905141003425_Db_update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905141016298_Db_Change.cs" />
+    <Compile Include="Migrations\201905141016298_Db_Change.Designer.cs">
+      <DependentUpon>201905141016298_Db_Change.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905141027122_Db_Change2.cs" />
+    <Compile Include="Migrations\201905141027122_Db_Change2.Designer.cs">
+      <DependentUpon>201905141027122_Db_Change2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905141034319_Db_Change3.cs" />
+    <Compile Include="Migrations\201905141034319_Db_Change3.Designer.cs">
+      <DependentUpon>201905141034319_Db_Change3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AdminDetails.cs" />
     <Compile Include="Models\AdminUserPrivilege.cs" />
@@ -121,6 +137,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905100619234_RoleModel_Updated.resx">
       <DependentUpon>201905100619234_RoleModel_Updated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905141003425_Db_update.resx">
+      <DependentUpon>201905141003425_Db_update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905141016298_Db_Change.resx">
+      <DependentUpon>201905141016298_Db_Change.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905141027122_Db_Change2.resx">
+      <DependentUpon>201905141027122_Db_Change2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905141034319_Db_Change3.resx">
+      <DependentUpon>201905141034319_Db_Change3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
