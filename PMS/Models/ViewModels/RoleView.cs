@@ -4,9 +4,9 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace PMS_DAL.Models
+namespace Models.ViewModels
 {
-    public class Role
+    public class RoleView
     {
         public int Id { get; set; }
         [Required(ErrorMessage = "Role is Required")]
