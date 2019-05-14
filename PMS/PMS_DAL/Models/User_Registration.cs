@@ -25,7 +25,8 @@ namespace PMS_DAL.Models
         public string User_Password { get; set; }
         [Required(ErrorMessage = "Enter password to Confirm ")]
         public string Confirm_Password { get; set; }
-        [Required(ErrorMessage ="The given DOB is not valid ")]
-        public string User_DOB { get; set; }
+        [Required(ErrorMessage ="Enter Date of Birth ")]
+        [DataType(DataType.Date)]
+        public DateTime? DateOfBirth { get; set; }
     }
 }
