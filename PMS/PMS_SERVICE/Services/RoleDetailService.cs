@@ -15,15 +15,16 @@ namespace PMS_SERVICE.Services
         {
             List<Role> roles = Roles.GetAllRole();
             List<RoleView> roless = new List<RoleView>();
-            foreach(Role s in roles)
-            {
-                roless.Add(new RoleView
-                {
-                    RoleName = s.RoleName,
-                    Id = s.Id,
-                    Status = s.Status
-                });
-            }
+            //foreach(Role s in roles)
+            //{
+            //    roless.Add(new RoleView
+            //    {
+            //        RoleName = s.RoleName,
+            //        Id = s.Id,
+            //        Status = s.Status
+            //    });
+            //}
+            roless.AddRange(roles.Select(it=>new RoleView {Id=it.Id,RoleName = it.RoleName,Status = it.Status }));
             return roless;
         }
         public bool InsertRole(RoleView role)
@@ -40,6 +41,7 @@ namespace PMS_SERVICE.Services
                 Id = role.Id,
                 Status = role.Status
             };
+           
             return roles;
         }
         public bool DeleteRole(int id)

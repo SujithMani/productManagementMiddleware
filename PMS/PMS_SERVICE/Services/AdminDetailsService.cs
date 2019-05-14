@@ -11,10 +11,12 @@ namespace PMS_SERVICE.Services
     public class AdminDetailsService
     {
         AdminDetailsRepository adminrepo = new AdminDetailsRepository();
-        public List<AdminDetails> GetAdminDetails()
+        public List<AdminDetailsVIew> GetAdminDetails()
         {
             List<AdminDetails> adminDetails = adminrepo.GetAllAdminDetails();
-            return adminDetails;
+            List<AdminDetailsVIew> adminDetailsView = new List<AdminDetailsVIew>();
+            adminDetailsView.AddRange(adminDetails.Select(ad => new AdminDetailsVIew { Name = ad.Name, Id = ad.Id, Email = ad.Email, Password = ad.Password }));
+            return adminDetailsView;
         }
 
         public bool GetAdminByNameAndPassword(LoginDetails user)

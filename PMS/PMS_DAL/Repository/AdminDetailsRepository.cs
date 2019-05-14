@@ -17,7 +17,7 @@ namespace PMS_DAL.Repository
         {
             try
             {
-                List<AdminDetails> adminDetails = DB.AdminDetails.ToList();               
+                List<AdminDetails> adminDetails = DB.AdminDetails.Include("Role").ToList();               
                 //adminDetails.ForEach(it => it.AdminUserRoles = DB.AdminUserRole.Where(itr => itr.AdminUserId == it.Id).ToList());
                 return adminDetails;
             }

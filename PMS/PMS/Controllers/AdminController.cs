@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
+using Models.ViewModels;
+using PMS_SERVICE.Services;
 namespace PMS.Controllers
 {
     public class AdminController : Controller
     {
         // GET: Admin
+        private AdminDetailsService adminDetailsService = new AdminDetailsService();
         public ActionResult Index()
         {
-            return View();
+            List<AdminDetailsVIew> adminDetails= adminDetailsService.GetAdminDetails();
+            return View(adminDetails);
         }
 
         // GET: Admin/Details/5

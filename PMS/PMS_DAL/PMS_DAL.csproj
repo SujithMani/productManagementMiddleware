@@ -67,6 +67,10 @@
     <Compile Include="Migrations\201905100619234_RoleModel_Updated.Designer.cs">
       <DependentUpon>201905100619234_RoleModel_Updated.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905140954374_Database_Update.cs" />
+    <Compile Include="Migrations\201905140954374_Database_Update.Designer.cs">
+      <DependentUpon>201905140954374_Database_Update.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AdminDetails.cs" />
     <Compile Include="Models\AdminUserPrivilege.cs" />
@@ -121,6 +125,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905100619234_RoleModel_Updated.resx">
       <DependentUpon>201905100619234_RoleModel_Updated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905140954374_Database_Update.resx">
+      <DependentUpon>201905140954374_Database_Update.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
