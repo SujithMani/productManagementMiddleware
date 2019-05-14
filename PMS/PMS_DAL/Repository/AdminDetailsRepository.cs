@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Models.ViewModels;
 namespace PMS_DAL.Repository
 {
     public class AdminDetailsRepository
@@ -24,6 +24,34 @@ namespace PMS_DAL.Repository
             catch(Exception e)
             {
                 return null;
+            }
+        }
+        public bool GetAdminByNameAndPassword(LoginDetails AdminDetails)
+        {
+            string name = AdminDetails.Username;
+            string pass = AdminDetails.Password;
+            try
+            {
+                if(name != null && pass !=null)
+                {
+                    AdminDetails adminDetails = DB.AdminDetails.Where(a => a.Username == name && a.Password == pass).FirstOrDefault();
+                    if (adminDetails != null)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch(Exception e)
+            {
+                return false;
             }
         }
         public bool InsertAdminDetails(AdminDetails AdminDetails)

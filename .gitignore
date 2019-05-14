@@ -8,5 +8,9 @@ PMS/PMS_DAL/obj/
 PMS/UTILITY/obj/
 PMS/UTILITY/bin/Debug/UTILITY.pdb
 PMS/UTILITY/bin/
-PMS/PMS_SERVICE/obj/Debug/
+PMS/Models/obj/
+PMS/Models/bin/
+PMS/PMS/bin/
+PMS/PMS_DAL/bin/
+PMS/PMS_SERVICE/bin/
 PMS/PMS/obj/
