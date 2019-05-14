@@ -36,7 +36,6 @@ namespace PMS_DAL
         public virtual DbSet<Role> Role { get; set; }
         public virtual DbSet<RolePrivilege> RolePrivilege { get; set; }
         public virtual DbSet<User_Registration> User_Registration { get; set; }
-        public virtual DbSet<Products_Cart> Products_Cart { get; set; }
         public virtual DbSet<Users_Invoice> Users_Invoice { get; set; }
         public virtual DbSet<Product_Check_Out> Product_Check_Out { get; set; }
 

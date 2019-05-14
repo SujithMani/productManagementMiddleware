@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -24,7 +25,10 @@ namespace PMS_DAL.Models
         [Required(ErrorMessage = "Enter a password with capital letter, alphanumeric character and punctuations")]
         public string User_Password { get; set; }
         [Required(ErrorMessage = "Enter password to Confirm ")]
+        [NotMapped()]
         public string Confirm_Password { get; set; }
-        
+        [Required(ErrorMessage ="Enter Date of Birth ")]
+        [DataType(DataType.DateTime)]
+        public DateTime? Date_Of_Birth { get; set; }
     }
 }

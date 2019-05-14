@@ -11,10 +11,12 @@ namespace PMS_DAL.Repository
     {
         private Context DB = new Context();
 
+        //Updation And Creation
         public bool Product_Create(Product_Check_Out pdt)
         {
             try
             {
+                //Update
                 if (pdt.Id != 0)
                 {
                     Product_Check_Out Update = DB.Product_Check_Out.Find(pdt.Id);
@@ -34,6 +36,7 @@ namespace PMS_DAL.Repository
                     DB.SaveChanges();
                     return true;
                 }
+                
             }
             catch
             {
@@ -41,6 +44,7 @@ namespace PMS_DAL.Repository
             }
         }
 
+        //Read All ID's
         public List<Product_Check_Out> User_ReadAll()
         {
             try
