@@ -24,6 +24,7 @@ namespace PMS_DAL.Repository
                     Update.Shipping_Charges = pdt.Shipping_Charges;
                     Update.TotalCharges = pdt.TotalCharges;
                     Update.DestPoint = pdt.DestPoint;
+                    return true;
                 }
 
                 //Create
