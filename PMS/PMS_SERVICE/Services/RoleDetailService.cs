@@ -5,25 +5,42 @@ using System.Text;
 using System.Threading.Tasks;
 using PMS_DAL.Repository;
 using PMS_DAL.Models;
+using Models.ViewModels;
 namespace PMS_SERVICE.Services
 {
     public class RoleDetailService
     {
         private RoleRepository Roles = new RoleRepository();
-        public List<Role> GetRoles()
+        public List<RoleView> GetRoles()
         {
             List<Role> roles = Roles.GetAllRole();
-            return roles;
+            List<RoleView> roless = new List<RoleView>();
+            foreach(Role s in roles)
+            {
+                roless.Add(new RoleView
+                {
+                    RoleName = s.RoleName,
+                    Id = s.Id,
+                    Status = s.Status
+                });
+            }
+            return roless;
         }
-        public bool InsertRole(Role role)
+        public bool InsertRole(RoleView role)
         {
             bool result = Roles.InsertRole(role);
             return result;
         }
-        public Role GetSingleRole(int id)
+        public RoleView GetSingleRole(int id)
         {
             Role role = Roles.GetSingleRole(id);
-            return role;
+            RoleView roles = new RoleView()
+            {
+                RoleName = role.RoleName,
+                Id = role.Id,
+                Status = role.Status
+            };
+            return roles;
         }
         public bool DeleteRole(int id)
         {
