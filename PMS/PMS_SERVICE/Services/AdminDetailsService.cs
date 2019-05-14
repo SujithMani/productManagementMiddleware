@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using PMS_DAL.Repository;
 using PMS_DAL.Models;
+using Models.ViewModels;
 namespace PMS_SERVICE.Services
 {
     public class AdminDetailsService

@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using PMS_SERVICE.Services;
 using PMS.Controllers;
-using PMS.ViewModels;
+using Models.ViewModels;
 
 namespace PMS.Controllers
 {
