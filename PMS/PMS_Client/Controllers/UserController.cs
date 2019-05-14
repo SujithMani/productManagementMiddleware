@@ -6,16 +6,19 @@ using System.Web.Mvc;
 
 namespace PMS_Client.Controllers
 {
-    public class RegistrationpageController : Controller
+    public class UserController : Controller
     {
+        // GET: User
         public ActionResult Index()
         {
             return View();
         }
-
+        public ActionResult Login()
+        {
+            return View();
+        }
         public ActionResult Registration()
         {
-            ViewBag.Message = "Registration Form";
             return View();
         }
     }

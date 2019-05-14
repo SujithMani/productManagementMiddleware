@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "Login_page";
+}
+
+<h2>Login_page</h2>
+
+<form action="" method="post" t>
+    <p>
+        User Name: @Html.TextBox("UserName")
+        
+        <br /><br />
+        
+            Password:  @Html.Password("password","",new { id="password", Textmode="Password"})
+
+    </p>
+
+    <input id="Submit1" type="submit" value="Login" />
+
+    <br/><br/><br/>
+
+    New to PMS? 
+    @Html.ActionLink("Register","Registration")
+    new Account.
+</form>

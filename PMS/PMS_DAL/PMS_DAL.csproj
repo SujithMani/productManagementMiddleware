@@ -84,7 +84,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\Product_Check_Out_Repository.cs" />
     <Compile Include="Repository\Users_Invoice_Repository.cs" />
-    <Compile Include="Repository\User_Registration_Repository.cs" />
+    <Compile Include="Repository\User_Repository.cs" />
     <Compile Include="Repository\AdminDetailsRepository.cs" />
     <Compile Include="Repository\AdminUserPrivilegeRepository.cs" />
     <Compile Include="Repository\AdminUserRoleRepository.cs" />

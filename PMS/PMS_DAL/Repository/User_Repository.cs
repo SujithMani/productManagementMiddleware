@@ -10,10 +10,11 @@ using System.Web;
 
 namespace PMS_DAL.Repository
 {
-    public class User_Registration_Repository
+    public class User_Repository
     {
         private Context DB = new Context();
 
+        //Updation and Creation
         public bool User_Create(User_Registration user)
         {
             try
