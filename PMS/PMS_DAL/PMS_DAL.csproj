@@ -71,6 +71,10 @@
     <Compile Include="Migrations\201905140954374_Database_Update.Designer.cs">
       <DependentUpon>201905140954374_Database_Update.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905141034319_Db_Change3.cs" />
+    <Compile Include="Migrations\201905141034319_Db_Change3.Designer.cs">
+      <DependentUpon>201905141034319_Db_Change3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AdminDetails.cs" />
     <Compile Include="Models\AdminUserPrivilege.cs" />
@@ -92,7 +96,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\Product_Check_Out_Repository.cs" />
     <Compile Include="Repository\Users_Invoice_Repository.cs" />
-    <Compile Include="Repository\User_Registration_Repository.cs" />
     <Compile Include="Repository\AdminDetailsRepository.cs" />
     <Compile Include="Repository\AdminUserPrivilegeRepository.cs" />
     <Compile Include="Repository\AdminUserRoleRepository.cs" />
@@ -106,6 +109,7 @@
     <Compile Include="Repository\ProductRepository.cs" />
     <Compile Include="Repository\RolePrivillageRepository.cs" />
     <Compile Include="Repository\RoleRepository.cs" />
+    <Compile Include="Repository\User_Repository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -128,6 +132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905140954374_Database_Update.resx">
       <DependentUpon>201905140954374_Database_Update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905141034319_Db_Change3.resx">
+      <DependentUpon>201905141034319_Db_Change3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
