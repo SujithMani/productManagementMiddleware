@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Models.ViewModels
 {
-    public class AdminDetails
+    public class AdminDetailsVIew
     {
         public int Id { get; set; }
         [Required(ErrorMessage = "Name is required")]

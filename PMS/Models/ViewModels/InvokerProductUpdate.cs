@@ -13,7 +13,7 @@ namespace Models.ViewModels
         public int AdminUserId { get; set; }
         [ForeignKey("Product")]
         public int ProductId { get; set; }
-        public virtual AdminDetails AdminDetails { get; set; }
+        public virtual AdminDetailsVIew AdminDetails { get; set; }
         public virtual Product Product { get; set; }
     }
 }

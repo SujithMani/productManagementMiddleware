@@ -13,8 +13,8 @@ namespace Models.ViewModels
         public int AdminUserId { get; set; }
         [ForeignKey("Role")]
         public int AdminRoleId { get; set; }
-        public virtual AdminDetails User { get; set; }
-        public virtual Role Role { get; set; }
+        public virtual AdminDetailsVIew User { get; set; }
+        public virtual RoleView Role { get; set; }
 
     }
 }

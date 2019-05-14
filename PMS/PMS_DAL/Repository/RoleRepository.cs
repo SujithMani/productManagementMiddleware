@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PMS_DAL.Models;
+using Models.ViewModels;
 namespace PMS_DAL.Repository
 {
     public class RoleRepository
@@ -35,7 +36,7 @@ namespace PMS_DAL.Repository
                 return null;
             }
         }
-        public bool InsertRole(Role RoleDetails)
+        public bool InsertRole(RoleView RoleDetails)
         {
             int CurrentId = RoleDetails.Id;
             try
@@ -50,7 +51,10 @@ namespace PMS_DAL.Repository
                 }
                 else if (RoleDetails != null)
                 {
-                    DB.Role.Add(RoleDetails);
+                    Role role = new Role();
+                    role.RoleName = RoleDetails.RoleName;
+                    role.Status = RoleDetails.Status;
+                    DB.Role.Add(role);
                     DB.SaveChanges();
                     return true;
                 }

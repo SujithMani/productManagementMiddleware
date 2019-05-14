@@ -11,3 +11,7 @@ PMS/PMS_SERVICE/obj/
 PMS/PMS/bin/
 PMS/PMS/obj/
 PMS/Models/obj/
+PMS/Models/bin/
+PMS/PMS_DAL/bin/Debug/Models.dll
+PMS/PMS_SERVICE/bin/
+PMS/PMS_DAL/bin/

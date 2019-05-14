@@ -13,7 +13,7 @@ namespace Models.ViewModels
         public int RoleId { get; set; }
         [ForeignKey("Privilege")]
         public int PrivilegeId { get; set; }
-        public virtual Role Role { get; set; }
+        public virtual RoleView Role { get; set; }
         public virtual Privilege Privilege{ get; set; }
     }
 }

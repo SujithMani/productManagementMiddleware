@@ -1,11 +1,10 @@
-﻿using PMS_DAL.Models;
-using PMS_SERVICE.Services;
+﻿using PMS_SERVICE.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
+using Models.ViewModels;
 namespace PMS.Controllers
 {
     public class RoleController : Controller
@@ -17,7 +16,7 @@ namespace PMS.Controllers
            
             if (Session["username"] != null)
             {
-                List<Role> adminDetails = roleDetailService.GetRoles();
+                List<RoleView> adminDetails = roleDetailService.GetRoles();
                 return View("Index", "_LayoutAdmin", adminDetails);
             }
             else
@@ -39,7 +38,7 @@ namespace PMS.Controllers
         }
         [ValidateAntiForgeryToken]
         [HttpPost]
-        public ActionResult Create(Role role)
+        public ActionResult Create(RoleView role)
         {
             if (Session["username"] != null)
             {
@@ -68,12 +67,12 @@ namespace PMS.Controllers
         }
         public ActionResult Edit(int id)
         {
-            Role role = roleDetailService.GetSingleRole(id);
+            RoleView role = roleDetailService.GetSingleRole(id);
             return View("Edit", "_LayoutAdmin", role);
         }
         [ValidateAntiForgeryToken]
         [HttpPost]
-        public ActionResult Edit(Role role)
+        public ActionResult Edit(RoleView role)
         {
             if (Session["username"] != null)
             {
@@ -105,7 +104,7 @@ namespace PMS.Controllers
             if (Session["username"] != null)
             {
                
-                    Role result = roleDetailService.GetSingleRole(id);
+                    RoleView result = roleDetailService.GetSingleRole(id);
                     if (result != null)
                     {
                     return View("Details", "_LayoutAdmin", result);

@@ -6,7 +6,7 @@ using System.Web;
 
 namespace Models.ViewModels
 {
-    public class Role
+    public class RoleView
     {
         public int Id { get; set; }
         [Required(ErrorMessage = "Role is Required")]
