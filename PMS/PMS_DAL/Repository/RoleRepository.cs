@@ -16,6 +16,17 @@ namespace PMS_DAL.Repository
         {
             try
             {
+                List<Role> Role = DB.Role.ToList();
+                return Role;
+            }
+            catch
+            {
+                return null;
+            }
+        }public List<Role> GetAllRoleByStatus()
+        {
+            try
+            {
                 List<Role> Role = DB.Role.Where(role => role.Status == 1).ToList();
                 return Role;
             }

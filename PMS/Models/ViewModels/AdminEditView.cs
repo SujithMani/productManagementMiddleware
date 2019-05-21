@@ -11,5 +11,6 @@ namespace Models.ViewModels
     {
         public AdminDetailsVIew adminDetails { get; set; }
         public List<AdminEditRoleView> roles { get; set; }
+        public List<AdminUserRoleView> adminRoles { get; set; }
     }
 }

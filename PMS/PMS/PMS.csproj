@@ -135,6 +135,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PageDetailsController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
@@ -193,6 +194,8 @@
     <Content Include="Views\Admin\RenderRole.cshtml" />
     <Content Include="Views\Admin\Create.cshtml" />
     <Content Include="Views\Admin\Edit.cshtml" />
+    <Content Include="Views\PageDetails\Index.cshtml" />
+    <Content Include="Views\PageDetails\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -244,7 +247,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>51298</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:51296/</IISUrl>
+          <IISUrl>http://localhost:51298/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
