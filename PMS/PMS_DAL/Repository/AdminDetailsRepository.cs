@@ -17,7 +17,7 @@ namespace PMS_DAL.Repository
         {
             try
             {
-                List<AdminDetails> adminDetails = DB.AdminDetails.Include("Role").ToList();               
+                List<AdminDetails> adminDetails = DB.AdminDetails.ToList();               
                 //adminDetails.ForEach(it => it.AdminUserRoles = DB.AdminUserRole.Where(itr => itr.AdminUserId == it.Id).ToList());
                 return adminDetails;
             }
@@ -26,7 +26,38 @@ namespace PMS_DAL.Repository
                 return null;
             }
         }
-        public bool GetAdminByNameAndPassword(LoginDetails AdminDetails)
+        public AdminDetails GetSingleAdminDetails(int id)
+        {
+            try
+            {
+                AdminDetails adminDetails = DB.AdminDetails.Find(id);
+                return adminDetails;
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+        }
+        public bool CheckUserNameAvailable(string username)
+        {
+            try
+            {
+                AdminDetails adminDetails = DB.AdminDetails.Where(admin => admin.Username.Equals(username)).FirstOrDefault();
+                if(adminDetails != null)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+        public bool GetAdminByNameAndPassword(LoginDetailsView AdminDetails)
         {
             string name = AdminDetails.Username;
             string pass = AdminDetails.Password;
@@ -54,7 +85,7 @@ namespace PMS_DAL.Repository
                 return false;
             }
         }
-        public bool InsertAdminDetails(AdminDetails AdminDetails)
+        public int InsertAdminDetails(AdminDetailsVIew AdminDetails)
         {
             int CurrentId = AdminDetails.Id;
             try
@@ -67,22 +98,29 @@ namespace PMS_DAL.Repository
                     adminDetails.Username = AdminDetails.Username;
                     adminDetails.Email = AdminDetails.Email;
                     DB.SaveChanges();
-                    return true;
+                    int id = adminDetails.Id;
+                    return id;
                 }
                 else if (AdminDetails != null)
                 {
-                    DB.AdminDetails.Add(AdminDetails);
+                    AdminDetails adminDetails = new AdminDetails();
+                    adminDetails.Name = AdminDetails.Name;
+                    adminDetails.Password = AdminDetails.Password;
+                    adminDetails.Username = AdminDetails.Username;
+                    adminDetails.Email = AdminDetails.Email;
+                    DB.AdminDetails.Add(adminDetails);
                     DB.SaveChanges();
-                    return true;
+                    int id = adminDetails.Id;
+                    return id;
                 }
                 else
                 {
-                    return false;
+                    return 0;
                 }
             }
             catch
             {
-                return false;
+                return -1;
             }
            
           

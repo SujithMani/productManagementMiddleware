@@ -1,0 +1,87 @@
+﻿@model Models.ViewModels.AdminEditView
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm("Edit", "Admin", FormMethod.Post, new { @class = "form-horizontal", @id = "adminCreate", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    HtmlHelper.UnobtrusiveJavaScriptEnabled = false;
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.adminDetails.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-3">
+                @Html.EditorFor(model => model.adminDetails.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.adminDetails.Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.adminDetails.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-3">
+                @Html.EditorFor(model => model.adminDetails.Email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.adminDetails.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.adminDetails.Username, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-3">
+                @Html.EditorFor(model => model.adminDetails.Username, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.adminDetails.Username, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-2">
+                <span id="username_msg"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.adminDetails.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-3">
+                @Html.EditorFor(model => model.adminDetails.Password, new { htmlAttributes = new { @class = "form-control", type = "Password" } })
+                @Html.ValidationMessageFor(model => model.adminDetails.Password, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("Confirm Password", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-3">
+                @Html.Editor("confirm_pass", new { htmlAttributes = new { @class = "form-control", type = "Password" } })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("Role", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-3">
+                @*@for (int i = 0; i < Model.roles.Count(); i++)
+                    {
+                        bool res = Model.roles[i].Status == 1 ? false : false;
+                        @Html.RadioButtonFor(model => Model.roles[i].RoleName,"")
+                        <label>@Model.roles[i].RoleName</label>
+
+                        <br />
+                        @Html.ValidationMessageFor(model => Model.roles[i].RoleName, "", new { @class = "text-danger" })
+                    }*@
+                @foreach (var item in Model.roles)
+                {
+                    @Html.Label(item.roles.RoleName)
+                    <input type="checkbox" name="roles" value="@item.roles.Id" @if(item.AdminUserId == Model.adminDetails.Id){<text>checked</text>}/>
+<br />
+                }
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-3">
+                <input type="submit" value="Create" class="btn btn-success" id="adminCreate" />
+            </div>
+        </div>
+    </div>
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+        @Scripts.Render("~/bundles/custom-validator")
+    }
+}
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

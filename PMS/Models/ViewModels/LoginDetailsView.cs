@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Models.ViewModels
 {
-    public class LoginDetails
+    public class LoginDetailsView
     {
         [Required(ErrorMessage = "Password is required")]
         public string Password { get; set; }

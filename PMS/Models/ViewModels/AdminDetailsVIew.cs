@@ -12,13 +12,13 @@ namespace Models.ViewModels
         public int Id { get; set; }
         [Required(ErrorMessage = "Name is required")]
         public string Name { get; set; }
-        [Required(ErrorMessage = "Email is required")]
+        [Required(ErrorMessage = "Email is required"),EmailAddress(ErrorMessage ="Email required")]
         public string Email { get; set; }
         [Required(ErrorMessage = "Password is required")]
         public string Password { get; set; }
         [Required(ErrorMessage = "Username is required")]
         public string Username { get; set; }
-        public ICollection<AdminUserRole> AdminUserRoles { get; set; }
-        public ICollection<AdminUserPrivilege> AdminUserPrivileges { get; set; }
+        public ICollection<AdminUserRoleView> AdminUserRoles { get; set; }
+        public ICollection<AdminUserPrivilegeView> AdminUserPrivileges { get; set; }
     }
 }

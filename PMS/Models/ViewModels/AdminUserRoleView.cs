@@ -6,7 +6,7 @@ using System.Web;
 
 namespace Models.ViewModels
 {
-    public class AdminUserRole
+    public class AdminUserRoleView
     {
         public int Id { get; set; }
         [ForeignKey("User")]

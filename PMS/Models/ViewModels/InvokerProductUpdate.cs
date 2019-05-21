@@ -14,6 +14,6 @@ namespace Models.ViewModels
         [ForeignKey("Product")]
         public int ProductId { get; set; }
         public virtual AdminDetailsVIew AdminDetails { get; set; }
-        public virtual Product Product { get; set; }
+        public virtual ProductView Product { get; set; }
     }
 }

@@ -1,0 +1,14 @@
+﻿@model IEnumerable<Models.ViewModels.RoleView>
+<div class="form-group">
+    @Html.Label("Role", htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @foreach (var item in Model)
+        {
+            @Html.Label(item.RoleName)
+            @Html.RadioButton("RoleName", item.Id)
+
+            <br />
+        }
+    </div>
+</div>
+

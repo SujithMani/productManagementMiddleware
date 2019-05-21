@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Models.ViewModels
 {
-    public class PageDetails
+    public class PageDetailsView
     {
         public int Id { get; set; }
         public string PageKey { get; set; }

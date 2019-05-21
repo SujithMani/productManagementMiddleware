@@ -12,7 +12,7 @@ namespace Models.ViewModels
         [Required(ErrorMessage = "Role is Required")]
         public string RoleName { get; set; }
         public int Status { get; set; }
-        public ICollection<AdminUserRole> AdminUserRoles { get;set; }
+        public ICollection<AdminUserRoleView> AdminUserRoles { get;set; }
         public ICollection<RolePrivilege> RolePrivileges { get; set; }
     }
 }

@@ -5,11 +5,11 @@ using System.Web;
 
 namespace Models.ViewModels
 {
-    public class Privilege
+    public class PrivilegeView
     {
         public int Id { get; set; }
         public string PrivilegeName { get; set; }
-        public ICollection<AdminUserPrivilege> AdminUserPrivileges { get; set; }
+        public ICollection<AdminUserPrivilegeView> AdminUserPrivileges { get; set; }
         public ICollection<RolePrivilege> RolePrivileges { get; set; }
     }
 }

@@ -6,14 +6,14 @@ using System.Web;
 
 namespace Models.ViewModels
 {
-    public class MainCategoryProduct
+    public class OfferProductView
     {
         public int Id { get; set; }
-        [ForeignKey("MainCategory")]
-        public int CategoryId { get; set; }
+        [ForeignKey("Offer")]
+        public int OfferId { get; set; }
         [ForeignKey("Product")]
         public int ProductId { get; set; }
-        public virtual MainCategory MainCategory { get; set; }
-        public virtual Product Product { get; set; }
+        public  virtual OfferView Offer { get; set; }
+        public virtual ProductView Product { get; set; }
     }
 }

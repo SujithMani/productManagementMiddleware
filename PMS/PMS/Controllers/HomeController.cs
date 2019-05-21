@@ -24,7 +24,7 @@ namespace PMS.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Index(LoginDetails user)
+        public ActionResult Index(LoginDetailsView user)
         {
             if(ModelState.IsValid)
             {

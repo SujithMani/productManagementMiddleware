@@ -44,19 +44,23 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\AdminCreateRequestView.cs" />
+    <Compile Include="ViewModels\AdminCreateView.cs" />
     <Compile Include="ViewModels\AdminDetailsVIew.cs" />
-    <Compile Include="ViewModels\AdminUserPrivilege.cs" />
-    <Compile Include="ViewModels\AdminUserRole.cs" />
+    <Compile Include="ViewModels\AdminEditRoleView.cs" />
+    <Compile Include="ViewModels\AdminEditView.cs" />
+    <Compile Include="ViewModels\AdminUserPrivilegeView.cs" />
+    <Compile Include="ViewModels\AdminUserRoleView.cs" />
     <Compile Include="ViewModels\InvokerProductUpdate.cs" />
-    <Compile Include="ViewModels\LoginDetails.cs" />
-    <Compile Include="ViewModels\MainCategory.cs" />
-    <Compile Include="ViewModels\MainCategoryProduct.cs" />
-    <Compile Include="ViewModels\Offer.cs" />
-    <Compile Include="ViewModels\OfferProduct.cs" />
-    <Compile Include="ViewModels\PageDetails.cs" />
-    <Compile Include="ViewModels\Privilege.cs" />
-    <Compile Include="ViewModels\Product.cs" />
-    <Compile Include="ViewModels\RolePrivillage.cs" />
+    <Compile Include="ViewModels\LoginDetailsView.cs" />
+    <Compile Include="ViewModels\MainCategoryView.cs" />
+    <Compile Include="ViewModels\MainCategoryProductView.cs" />
+    <Compile Include="ViewModels\OfferView.cs" />
+    <Compile Include="ViewModels\OfferProductView.cs" />
+    <Compile Include="ViewModels\PageDetailsView.cs" />
+    <Compile Include="ViewModels\PrivilegeView.cs" />
+    <Compile Include="ViewModels\ProductView.cs" />
+    <Compile Include="ViewModels\RolePrivillageView.cs" />
     <Compile Include="ViewModels\RoleView.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

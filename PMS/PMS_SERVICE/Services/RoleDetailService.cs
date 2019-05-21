@@ -24,7 +24,7 @@ namespace PMS_SERVICE.Services
             //        Status = s.Status
             //    });
             //}
-            roless.AddRange(roles.Select(it=>new RoleView {Id=it.Id,RoleName = it.RoleName,Status = it.Status }));
+            roless.AddRange(roles.Select(it=>new RoleView { Id = it.Id, RoleName = it.RoleName, Status = it.Status, AdminUserRoles = it.AdminUserRoles.Select(add => new AdminUserRoleView { AdminUserId = add.AdminUserId }).ToList() }));
             return roless;
         }
         public bool InsertRole(RoleView role)

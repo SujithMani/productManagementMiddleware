@@ -14,6 +14,6 @@ namespace Models.ViewModels
         [ForeignKey("Privilege")]
         public int PrivilegeId { get; set; }
         public virtual RoleView Role { get; set; }
-        public virtual Privilege Privilege{ get; set; }
+        public virtual PrivilegeView Privilege{ get; set; }
     }
 }

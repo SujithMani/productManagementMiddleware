@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Models.ViewModels
 {
-    public class Offer
+    public class OfferView
     {
         public int Id { get; set; }
         public string Description { get; set; }
@@ -13,6 +13,6 @@ namespace Models.ViewModels
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public int Status { get; set; }
-        public ICollection<OfferProduct> OfferProducts { get; set; }
+        public ICollection<OfferProductView> OfferProducts { get; set; }
     }
 }

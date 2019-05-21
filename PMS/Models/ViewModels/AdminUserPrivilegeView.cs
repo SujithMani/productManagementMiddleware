@@ -6,7 +6,7 @@ using System.Web;
 
 namespace Models.ViewModels
 {
-    public class AdminUserPrivilege
+    public class AdminUserPrivilegeView
     {
         public int Id { get; set; }
         [ForeignKey("AdminDetail")]
@@ -14,6 +14,6 @@ namespace Models.ViewModels
         [ForeignKey("Privilege")]
         public int PrivilegeId { get; set; }
         public virtual AdminDetailsVIew AdminDetail { get; set; }
-        public virtual Privilege Privilege { get; set; }
+        public virtual PrivilegeView Privilege { get; set; }
     }
 }

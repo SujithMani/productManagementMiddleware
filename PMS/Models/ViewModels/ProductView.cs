@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Models.ViewModels
 {
-    public class Product
+    public class ProductView
     {
         public int Id { get; set; }
         public string ProductName { get; set; }
@@ -16,7 +16,7 @@ namespace Models.ViewModels
         public string Image { get; set; }
         public int Status { get; set; }
         public int InvokerStatus { get; set; }
-        public ICollection<Product> Products { get; set; }
-        public ICollection<OfferProduct> OfferProducts { get; set; }
+        public ICollection<ProductView> Products { get; set; }
+        public ICollection<OfferProductView> OfferProducts { get; set; }
     }
 }
