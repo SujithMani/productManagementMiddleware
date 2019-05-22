@@ -66,14 +66,49 @@ namespace PMS_DAL.Repository
                 return false;
             }
         }
+        public bool UpdateUserRoleByAdminId(AdminUserRoleView roleView)
+        {
+            try
+            {
+                if (roleView.AdminUserId != 0 && roleView.AdminRoleId != 0)
+                {
+                    AdminUserRole AdminUserRoleDetails = DB.AdminUserRole.Where(ad => ad.AdminRoleId == roleView.AdminRoleId && ad.AdminUserId == roleView.AdminUserId).FirstOrDefault();
+                    if (AdminUserRoleDetails != null)
+                    {
+                        AdminUserRoleDetails.AdminUserId = roleView.AdminUserId;
+                        AdminUserRoleDetails.AdminRoleId = roleView.AdminRoleId;
+                        DB.SaveChanges();
+                        return true;
+                    }
+                    else
+                    {
+                        AdminUserRole adminUserRole = new AdminUserRole();
+                        adminUserRole.AdminUserId = roleView.AdminUserId;
+                        adminUserRole.AdminRoleId = roleView.AdminRoleId;
+                        DB.AdminUserRole.Add(adminUserRole);
+                        DB.SaveChanges();
+                        return true;
+                    }
+                    
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch(Exception e)
+            {
+                return false;
+            }
+        }
         public bool DeleteAdminUserRole(int AdminUserRoleId)
         {
             try
             {
                 if (AdminUserRoleId != 0)
                 {
-                    AdminUserRole AdminUserRoleDetails = DB.AdminUserRole.Find(AdminUserRoleId);
-                    DB.AdminUserRole.Remove(AdminUserRoleDetails);
+                    List<AdminUserRole> AdminUserRoleDetails = DB.AdminUserRole.Where(ad => ad.AdminUserId == AdminUserRoleId).ToList();
+                    DB.AdminUserRole.RemoveRange(AdminUserRoleDetails);
                     DB.SaveChanges();
                     return true;
                 }

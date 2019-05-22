@@ -81,7 +81,7 @@ namespace PMS.Controllers
                     if (ModelState.IsValid)
                     {
                         AdminDetailsService insertAdmin = new AdminDetailsService();
-                        var passHash = hashPassword(adminCreate.adminDetails.Password);
+                        var passHash = Encrypt(adminCreate.adminDetails.Password, "sblw-3hn8-sqoy19");
                         adminCreate.adminDetails.Password = passHash;
                         int res = insertAdmin.InsertAdminDetails(adminCreate.adminDetails);
                         if (res != 0)
@@ -170,8 +170,8 @@ namespace PMS.Controllers
                     if (ModelState.IsValid)
                     {
                         AdminDetailsService insertAdmin = new AdminDetailsService();
-                        var passHash = hashPassword(adminCreate.adminDetails.Password);
-                        adminCreate.adminDetails.Password = passHash;
+                        //var passHash = hashPassword(adminCreate.adminDetails.Password);
+                        //adminCreate.adminDetails.Password = passHash;
                         int res = insertAdmin.InsertAdminDetails(adminCreate.adminDetails);
                         if (res != 0)
                         {
@@ -180,7 +180,7 @@ namespace PMS.Controllers
                             {
                                 AdminUserRoleService adminUserRoleService = new AdminUserRoleService();
                                 AdminUserRoleView roleView = new AdminUserRoleView { AdminUserId = adminId, AdminRoleId = role };
-                                bool result = adminUserRoleService.InsertAdminUserRole(roleView);
+                                bool result = adminUserRoleService.UpdateUserRoleByAdminId(roleView);
                                 if (result)
                                 {
                                     continue;
@@ -236,7 +236,24 @@ namespace PMS.Controllers
         // GET: Admin/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            bool result = adminDetailsService.DeleteAdminById(id);
+            if (result)
+            {
+                bool resRole = adminUserRoleService.DeleteRoleByAdmin(id);
+                if (resRole)
+                {
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    return RedirectToAction("Index");
+                }
+            }
+            else
+            {
+
+            }
+            return RedirectToAction("Index");
         }
 
         // POST: Admin/Delete/5
@@ -254,14 +271,40 @@ namespace PMS.Controllers
                 return View();
             }
         }
-        public string hashPassword(string pass)
+        //public string hashPassword(string pass)
+        //{
+        //    var hasher = new SHA1Managed();
+        //    var data = hasher.ComputeHash(Encoding.UTF8.GetBytes(pass));
+
+        //    return BitConverter.ToString(data).Replace("-", String.Empty);
+
+        //}
+
+        public static string Encrypt(string input, string key)
         {
-            var hasher = new SHA1Managed();
-            var data = hasher.ComputeHash(Encoding.UTF8.GetBytes(pass));
-
-            return BitConverter.ToString(data).Replace("-", String.Empty);
-
+            byte[] inputArray = UTF8Encoding.UTF8.GetBytes(input);
+            TripleDESCryptoServiceProvider tripleDES = new TripleDESCryptoServiceProvider();
+            tripleDES.Key = UTF8Encoding.UTF8.GetBytes(key);
+            tripleDES.Mode = CipherMode.ECB;
+            tripleDES.Padding = PaddingMode.PKCS7;
+            ICryptoTransform cTransform = tripleDES.CreateEncryptor();
+            byte[] resultArray = cTransform.TransformFinalBlock(inputArray, 0, inputArray.Length);
+            tripleDES.Clear();
+            return Convert.ToBase64String(resultArray, 0, resultArray.Length);
         }
+        public static string Decrypt(string input, string key)
+        {
+            byte[] inputArray = Convert.FromBase64String(input);
+            TripleDESCryptoServiceProvider tripleDES = new TripleDESCryptoServiceProvider();
+            tripleDES.Key = UTF8Encoding.UTF8.GetBytes(key);
+            tripleDES.Mode = CipherMode.ECB;
+            tripleDES.Padding = PaddingMode.PKCS7;
+            ICryptoTransform cTransform = tripleDES.CreateDecryptor();
+            byte[] resultArray = cTransform.TransformFinalBlock(inputArray, 0, inputArray.Length);
+            tripleDES.Clear();
+            return UTF8Encoding.UTF8.GetString(resultArray);
+        }
+
         [HttpPost]
         public JsonResult CheckUsername(string user)
         {

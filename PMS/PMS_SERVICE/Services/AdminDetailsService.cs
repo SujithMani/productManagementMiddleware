@@ -11,6 +11,7 @@ namespace PMS_SERVICE.Services
     public class AdminDetailsService
     {
         AdminDetailsRepository adminrepo = new AdminDetailsRepository();
+        PageDetailsRepository pagerepo = new PageDetailsRepository();
         public List<AdminDetailsVIew> GetAdminDetails()
         {
             List<AdminDetails> adminDetails = adminrepo.GetAllAdminDetails();
@@ -38,7 +39,7 @@ namespace PMS_SERVICE.Services
                     AdminUserId = ad.AdminUserId,
                     AdminRoleId = ad.AdminRoleId,
                     Id = ad.Id
-                }).Where(add => add.AdminUserId == adminDetails.Id).ToList(),
+                }).Where(add =>add.AdminUserId == adminDetails.Id).ToList(),
             };
             
             return adminDetailsView;
@@ -58,6 +59,44 @@ namespace PMS_SERVICE.Services
         {
             bool result = adminrepo.CheckUserNameAvailable(username);
             return result;
+        }
+        public bool DeleteAdminById(int id)
+        {
+            bool result = adminrepo.DeleteAdminDetails(id);
+            return result;
+        }
+        public List<PageDetailsView> GetAllPageDetails()
+        {
+            List<PageDetails> pageDetails = pagerepo.GetPageDetailss();
+            List<PageDetailsView> pageDetailsViews = new List<PageDetailsView>();
+            pageDetailsViews.AddRange(pageDetails.Select(ad => new PageDetailsView {
+                Id = ad.Id,
+                PageDescription = ad.PageDescription,
+                PageKey = ad.PageKey
+            }));
+            return pageDetailsViews;
+
+        }
+        public bool InsertPageDetails(PageDetailsView pageDetails)
+        {
+            bool result = pagerepo.InsertPageDetails(pageDetails);
+            return result;
+        }
+        public bool DeletePageDetails(int id)
+        {
+            bool result = pagerepo.DeletePageDetails(id);
+            return result;
+        }
+        public PageDetailsView GetSinglePageDetails(int id)
+        {
+            PageDetails pageDetails = pagerepo.GetSinglePageDetailss(id);
+            PageDetailsView pageDetailsView = new PageDetailsView
+            {
+                Id = pageDetails.Id,
+                PageDescription = pageDetails.PageDescription,
+                PageKey = pageDetails.PageKey
+            };
+            return pageDetailsView;
         }
     }
 }

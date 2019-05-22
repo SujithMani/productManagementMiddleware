@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PMS_DAL.Models;
+using Models.ViewModels;
 namespace PMS_DAL.Repository
 {
     public class PageDetailsRepository
@@ -22,7 +23,19 @@ namespace PMS_DAL.Repository
                 return null;
             }
         }
-        public bool InsertPageDetails(PageDetails PageDetails)
+        public PageDetails GetSinglePageDetailss(int id)
+        {
+            try
+            {
+                PageDetails PageDetailss = DB.PageDetails.Find(id);
+                return PageDetailss;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+        public bool InsertPageDetails(PageDetailsView PageDetails)
         {
             try
             {
@@ -36,7 +49,10 @@ namespace PMS_DAL.Repository
                 }
                 else if (PageDetails != null)
                 {
-                    DB.PageDetails.Add(PageDetails);
+                    PageDetails PageDetailsDetails = new PageDetails();
+                    PageDetailsDetails.PageKey = PageDetails.PageKey;
+                    PageDetailsDetails.PageDescription = PageDetails.PageDescription;
+                    DB.PageDetails.Add(PageDetailsDetails);
                     DB.SaveChanges();
                     return true;
                 }

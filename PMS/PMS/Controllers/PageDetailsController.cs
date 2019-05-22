@@ -4,17 +4,19 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Models.ViewModels;
-
+using PMS_SERVICE.Services;
 namespace PMS.Controllers
 {
     public class PageDetailsController : Controller
     {
+        private AdminDetailsService adminDetailsService = new AdminDetailsService();
         // GET: PageDetails
         public ActionResult Index()
         {
             if (Session["username"] != null)
             {
-                return View();
+                List<PageDetailsView> pageDetails = adminDetailsService.GetAllPageDetails();
+                return View("Index","_LayoutAdmin", pageDetails);
             }
             else
             {
@@ -27,7 +29,8 @@ namespace PMS.Controllers
         {
             if (Session["username"] != null)
             {
-                return View();
+                PageDetailsView pageDetails = adminDetailsService.GetSinglePageDetails(id);
+                return View("Details", "_LayoutAdmin", pageDetails);
             }
             else
             {
@@ -57,6 +60,15 @@ namespace PMS.Controllers
             {
                 try
                 {
+                    if(ModelState.IsValid)
+                    {
+                        bool result = adminDetailsService.InsertPageDetails(pageDetails); 
+                    }
+                    else
+                    {
+                        ModelState.AddModelError(string.Empty, "Something happened");
+                        return View(pageDetails);
+                    }
                     // TODO: Add insert logic here
 
                     return RedirectToAction("Index");
@@ -78,7 +90,8 @@ namespace PMS.Controllers
         {
             if (Session["username"] != null)
             {
-                return View();
+                PageDetailsView pageDetails = adminDetailsService.GetSinglePageDetails(id);
+                return View("Edit","_LayoutAdmin", pageDetails);
             }
             else
             {
@@ -88,20 +101,29 @@ namespace PMS.Controllers
 
         // POST: PageDetails/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(PageDetailsView pageDetails)
         {
             if (Session["username"] != null)
             {
-                try
-                {
-                    // TODO: Add insert logic here
+                    try
+                    {
+                        if (ModelState.IsValid)
+                        {
+                            bool result = adminDetailsService.InsertPageDetails(pageDetails);
+                        }
+                        else
+                        {
+                        ModelState.AddModelError(string.Empty, "Something happened");
+                            return View("_LayoutAdmin",pageDetails);
+                        }
+                        // TODO: Add insert logic here
 
-                    return RedirectToAction("Index");
-                }
-                catch
-                {
-                    return View();
-                }
+                        return RedirectToAction("Index");
+                    }
+                    catch
+                    {
+                        return RedirectToAction("Index");
+                    }
             }
             else
             {
@@ -114,7 +136,15 @@ namespace PMS.Controllers
         {
             if (Session["username"] != null)
             {
-                return View();
+                bool result = adminDetailsService.DeletePageDetails(id);
+                if (result)
+                {
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    return RedirectToAction("Index");
+                }
             }
             else
             {

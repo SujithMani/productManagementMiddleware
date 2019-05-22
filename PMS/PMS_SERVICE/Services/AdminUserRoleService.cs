@@ -41,12 +41,22 @@ namespace PMS_SERVICE.Services
             bool result = adminUserRoleRepository.InsertAdminUserRole(roleView);
             return result;
         }
+        public bool UpdateUserRoleByAdminId(AdminUserRoleView roleView)
+        {
+            bool result = adminUserRoleRepository.UpdateUserRoleByAdminId(roleView);
+            return result;
+        }
         public List<AdminUserRoleView> GetRoleIDByAdminId(int id)
         {
             List<AdminUserRole> result = adminUserRoleRepository.GetRoleIDByAdminId(id);
             List<AdminUserRoleView> adminUserRoleView = new List<AdminUserRoleView>();
             adminUserRoleView.AddRange(result.Select(adm => new AdminUserRoleView { AdminUserId = adm.AdminUserId,AdminRoleId = adm.AdminRoleId, Role = new RoleView { RoleName = adm.Role.RoleName, Id = adm.Role.Id} }));
             return adminUserRoleView;
+        }
+        public bool DeleteRoleByAdmin(int id)
+        {
+            bool result = adminUserRoleRepository.DeleteAdminUserRole(id);
+            return result;
         }
     }
 }

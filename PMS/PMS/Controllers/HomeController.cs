@@ -29,7 +29,8 @@ namespace PMS.Controllers
             if(ModelState.IsValid)
             {
                 var Name = user.Username;
-                var Password = user.Password;
+                var Password = AdminController.Encrypt(user.Password, "sblw-3hn8-sqoy19");
+                user.Password = Password;
                 bool result = adminservice.GetAdminByNameAndPassword(user);
                 if (result)
                 {

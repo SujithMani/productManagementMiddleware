@@ -94,8 +94,8 @@ namespace PMS_DAL.Repository
                 {
                     AdminDetails adminDetails = DB.AdminDetails.Find(AdminDetails.Id);
                     adminDetails.Name = AdminDetails.Name;
-                    adminDetails.Password = AdminDetails.Password;
-                    adminDetails.Username = AdminDetails.Username;
+                    //adminDetails.Password = AdminDetails.Password;
+                    //adminDetails.Username = AdminDetails.Username;
                     adminDetails.Email = AdminDetails.Email;
                     DB.SaveChanges();
                     int id = adminDetails.Id;
