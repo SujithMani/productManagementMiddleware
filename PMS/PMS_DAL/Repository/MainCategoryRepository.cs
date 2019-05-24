@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PMS_DAL.Models;
+using Models.ViewModels;
+
 namespace PMS_DAL.Repository
 {
     public class MainCategoryRepository
@@ -23,7 +25,19 @@ namespace PMS_DAL.Repository
                 return null;
             }
         }
-        public bool InsertMainCategory(MainCategory MainCategory)
+        public MainCategory GetSingleMainCategory(int id)
+        {
+            try
+            {
+                MainCategory MainCategorys = DB.MainCategory.Find(id);
+                return MainCategorys;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+        public bool InsertMainCategory(MainCategoryView MainCategory)
         {
             try
             {
@@ -31,12 +45,16 @@ namespace PMS_DAL.Repository
                 {
                     MainCategory MainCategoryDetails = DB.MainCategory.Find(MainCategory.Id);
                     MainCategoryDetails.CategoryName = MainCategory.CategoryName;
+                    MainCategoryDetails.Status = MainCategory.Status;
                     DB.SaveChanges();
                     return true;
                 }
                 else if (MainCategory != null)
                 {
-                    DB.MainCategory.Add(MainCategory);
+                    MainCategory MainCategoryDetails = new MainCategory();
+                    MainCategoryDetails.CategoryName = MainCategory.CategoryName;
+                    MainCategoryDetails.Status = MainCategory.Status;
+                    DB.MainCategory.Add(MainCategoryDetails);
                     DB.SaveChanges();
                     return true;
                 }

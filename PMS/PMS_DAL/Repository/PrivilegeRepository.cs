@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PMS_DAL.Models;
+using Models.ViewModels;
 
 namespace PMS_DAL.Repository
 {
@@ -19,12 +20,24 @@ namespace PMS_DAL.Repository
                 List<Privilege> privileges = DB.Privilege.ToList();
                 return privileges;
             }
-            catch
+            catch(Exception e)
             {
                 return null;
             }
         }
-        public bool InsertPrivilege(Privilege privilege)
+        public Privilege GetSinglePrivillage(int id)
+        {
+            try
+            {
+                Privilege privileges = DB.Privilege.Find(id);
+                return privileges;
+            }
+            catch(Exception e)
+            {
+                return null;
+            }
+        }
+        public bool InsertPrivilege(PrivilegeView privilege)
         {
             try
             {
@@ -36,7 +49,9 @@ namespace PMS_DAL.Repository
                     return true;
                 }else if (privilege != null)
                 {
-                    DB.Privilege.Add(privilege);
+                    Privilege privilegeDetails = new Privilege();
+                    privilegeDetails.PrivilegeName = privilege.PrivilegeName;
+                    DB.Privilege.Add(privilegeDetails);
                     DB.SaveChanges();
                     return true;
                 }

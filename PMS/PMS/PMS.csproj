@@ -135,7 +135,9 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MainCategoryController.cs" />
     <Compile Include="Controllers\PageDetailsController.cs" />
+    <Compile Include="Controllers\PrivillageController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
@@ -198,6 +200,14 @@
     <Content Include="Views\PageDetails\Create.cshtml" />
     <Content Include="Views\PageDetails\Edit.cshtml" />
     <Content Include="Views\PageDetails\Details.cshtml" />
+    <Content Include="Views\Privillage\Index.cshtml" />
+    <Content Include="Views\Privillage\Create.cshtml" />
+    <Content Include="Views\Privillage\Edit.cshtml" />
+    <Content Include="Views\Privillage\Details.cshtml" />
+    <Content Include="Views\MainCategory\Index.cshtml" />
+    <Content Include="Views\MainCategory\Details.cshtml" />
+    <Content Include="Views\MainCategory\Create.cshtml" />
+    <Content Include="Views\MainCategory\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

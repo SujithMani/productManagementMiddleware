@@ -9,7 +9,7 @@ namespace Models.ViewModels
     {
         public int Id { get; set; }
         public string PrivilegeName { get; set; }
-        public ICollection<AdminUserPrivilegeView> AdminUserPrivileges { get; set; }
-        public ICollection<RolePrivilege> RolePrivileges { get; set; }
+        public virtual ICollection<AdminUserPrivilegeView> AdminUserPrivileges { get; set; }
+        public virtual ICollection<RolePrivilege> RolePrivileges { get; set; }
     }
 }
