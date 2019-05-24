@@ -12,7 +12,7 @@ namespace PMS_DAL.Models
         [Required(ErrorMessage = "Role is Required")]
         public string RoleName { get; set; }
         public int Status { get; set; }
-        public ICollection<AdminUserRole> AdminUserRoles { get;set; }
-        public ICollection<RolePrivilege> RolePrivileges { get; set; }
+        public virtual ICollection<AdminUserRole> AdminUserRoles { get;set; }
+        public virtual ICollection<RolePrivilege> RolePrivileges { get; set; }
     }
 }
