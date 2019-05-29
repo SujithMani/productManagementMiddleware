@@ -47,6 +47,8 @@
     <Compile Include="ViewModels\AdminDetailsVIew.cs" />
     <Compile Include="ViewModels\AdminUserPrivilege.cs" />
     <Compile Include="ViewModels\AdminUserRole.cs" />
+    <Compile Include="ViewModels\Clients_ViewModels\User_Login_View.cs" />
+    <Compile Include="ViewModels\Clients_ViewModels\User_Registration_View.cs" />
     <Compile Include="ViewModels\InvokerProductUpdate.cs" />
     <Compile Include="ViewModels\LoginDetails.cs" />
     <Compile Include="ViewModels\MainCategory.cs" />

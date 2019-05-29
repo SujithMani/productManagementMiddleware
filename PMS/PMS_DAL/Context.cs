@@ -46,7 +46,7 @@ namespace PMS_DAL
                 .WithRequired(e => e.User)
                 .HasForeignKey(e => e.AdminUserId);
 
-            modelBuilder.Entity<AdminDetails>()
+                modelBuilder.Entity<AdminDetails>()
                 .HasMany(e => e.AdminUserPrivileges)
                 .WithRequired(e => e.AdminDetail)
                 .HasForeignKey(e => e.AdminUserId);
