@@ -18,7 +18,7 @@ namespace PMS_DAL.Models
         public string Password { get; set; }
         [Required(ErrorMessage = "Username is required")]
         public string Username { get; set; }
-        public ICollection<AdminUserRole> AdminUserRoles { get; set; }
-        public ICollection<AdminUserPrivilege> AdminUserPrivileges { get; set; }
+        public virtual ICollection<AdminUserRole> AdminUserRoles { get; set; }
+        public virtual ICollection<AdminUserPrivilege> AdminUserPrivileges { get; set; }
     }
 }

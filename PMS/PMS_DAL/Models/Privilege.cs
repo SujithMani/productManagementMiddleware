@@ -9,7 +9,7 @@ namespace PMS_DAL.Models
     {
         public int Id { get; set; }
         public string PrivilegeName { get; set; }
-        public ICollection<AdminUserPrivilege> AdminUserPrivileges { get; set; }
-        public ICollection<RolePrivilege> RolePrivileges { get; set; }
+        public virtual ICollection<AdminUserPrivilege> AdminUserPrivileges { get; set; }
+        public virtual ICollection<RolePrivilege> RolePrivileges { get; set; }
     }
 }
