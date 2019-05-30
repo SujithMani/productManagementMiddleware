@@ -71,7 +71,6 @@ namespace PMS.Controllers
                     }
                     else
                     {
-                        ModelState.AddModelError(string.Empty, "Something happened");
                         return View("Create", "_LayoutAdmin", MainCategoryView);
                     }
 

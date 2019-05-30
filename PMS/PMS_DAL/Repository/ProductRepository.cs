@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PMS_DAL.Models;
+using Models.ViewModels;
 
 namespace PMS_DAL.Repository
 {
@@ -23,7 +24,7 @@ namespace PMS_DAL.Repository
                 return null;
             }
         }
-        public bool InsertProduct(Product ProductDetails)
+        public int InsertProduct(ProductView ProductDetails)
         {
             int CurrentId = ProductDetails.Id;
             try
@@ -38,22 +39,31 @@ namespace PMS_DAL.Repository
                     ProductDetailsById.Prize = ProductDetails.Prize;
                     ProductDetailsById.Image = ProductDetails.Image;
                     DB.SaveChanges();
-                    return true;
+                    int id = ProductDetailsById.Id;
+                    return id;
                 }
                 else if (ProductDetails != null)
                 {
-                    DB.Product.Add(ProductDetails);
+                    Product Products = new Product();
+                    Products.ProductName = ProductDetails.ProductName;
+                    Products.Description = ProductDetails.Description;
+                    Products.Sku = ProductDetails.Sku;
+                    Products.Keyword = ProductDetails.Keyword;
+                    Products.Prize = ProductDetails.Prize;
+                    Products.Image = ProductDetails.Image;
+                    DB.Product.Add(Products);
                     DB.SaveChanges();
-                    return true;
+                    int id = Products.Id;
+                    return id;
                 }
                 else
                 {
-                    return false;
+                    return 0;
                 }
             }
             catch
             {
-                return false;
+                return -1;
             }
 
 

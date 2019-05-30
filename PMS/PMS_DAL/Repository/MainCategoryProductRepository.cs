@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PMS_DAL.Models;
+using Models.ViewModels;
+
 namespace PMS_DAL.Repository
 {
     public class MainCategoryProductRepository
@@ -23,7 +25,7 @@ namespace PMS_DAL.Repository
                 return null;
             }
         }
-        public bool InsertMainCategoryProduct(MainCategoryProduct MainCategoryProduct)
+        public bool InsertMainCategoryProduct(MainCategoryProductView MainCategoryProduct)
         {
             try
             {
@@ -37,7 +39,10 @@ namespace PMS_DAL.Repository
                 }
                 else if (MainCategoryProduct != null)
                 {
-                    DB.MainCategoryProduct.Add(MainCategoryProduct);
+                    MainCategoryProduct MainCategoryProductDetails = new MainCategoryProduct();
+                    MainCategoryProductDetails.CategoryId = MainCategoryProduct.CategoryId;
+                    MainCategoryProductDetails.ProductId = MainCategoryProduct.ProductId;
+                    DB.MainCategoryProduct.Add(MainCategoryProductDetails);
                     DB.SaveChanges();
                     return true;
                 }

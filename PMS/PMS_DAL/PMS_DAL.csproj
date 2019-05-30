@@ -42,6 +42,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -66,10 +67,6 @@
     <Compile Include="Migrations\201905100619234_RoleModel_Updated.cs" />
     <Compile Include="Migrations\201905100619234_RoleModel_Updated.Designer.cs">
       <DependentUpon>201905100619234_RoleModel_Updated.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905140954374_Database_Update.cs" />
-    <Compile Include="Migrations\201905140954374_Database_Update.Designer.cs">
-      <DependentUpon>201905140954374_Database_Update.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201905141034319_Db_Change3.cs" />
     <Compile Include="Migrations\201905141034319_Db_Change3.Designer.cs">
@@ -133,9 +130,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905100619234_RoleModel_Updated.resx">
       <DependentUpon>201905100619234_RoleModel_Updated.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905140954374_Database_Update.resx">
-      <DependentUpon>201905140954374_Database_Update.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905141034319_Db_Change3.resx">
       <DependentUpon>201905141034319_Db_Change3.cs</DependentUpon>

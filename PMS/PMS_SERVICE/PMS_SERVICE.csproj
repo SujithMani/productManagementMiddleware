@@ -46,6 +46,7 @@
     <Compile Include="Services\AdminUserRoleService.cs" />
     <Compile Include="Services\MainCategoryService.cs" />
     <Compile Include="Services\PrivillageService.cs" />
+    <Compile Include="Services\ProductService.cs" />
     <Compile Include="Services\RoleDetailService.cs" />
   </ItemGroup>
   <ItemGroup />
