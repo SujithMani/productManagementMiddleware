@@ -23,7 +23,7 @@ namespace PMS_DAL.Models
         public string Image { get; set; }
         public int Status { get; set; }
         public int InvokerStatus { get; set; }
-        public ICollection<MainCategoryProduct> MainCategoryProducts { get; set; }
-        public ICollection<OfferProduct> OfferProducts { get; set; }
+        public virtual ICollection<MainCategoryProduct> MainCategoryProducts { get; set; }
+        public virtual ICollection<OfferProduct> OfferProducts { get; set; }
     }
 }

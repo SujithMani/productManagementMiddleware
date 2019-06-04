@@ -37,6 +37,7 @@ namespace PMS_DAL.Repository
                     ProductDetailsById.Sku = ProductDetails.Sku;
                     ProductDetailsById.Keyword = ProductDetails.Keyword;
                     ProductDetailsById.Prize = ProductDetails.Prize;
+                    ProductDetailsById.Status = ProductDetails.Status;
                     ProductDetailsById.Image = ProductDetails.Image;
                     DB.SaveChanges();
                     int id = ProductDetailsById.Id;
@@ -51,6 +52,7 @@ namespace PMS_DAL.Repository
                     Products.Keyword = ProductDetails.Keyword;
                     Products.Prize = ProductDetails.Prize;
                     Products.Image = ProductDetails.Image;
+                    Products.Status = ProductDetails.Status;
                     DB.Product.Add(Products);
                     DB.SaveChanges();
                     int id = Products.Id;

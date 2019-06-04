@@ -16,7 +16,25 @@ namespace PMS_SERVICE.Services
         {
             List<AdminDetails> adminDetails = adminrepo.GetAllAdminDetails();
             List<AdminDetailsVIew> adminDetailsView = new List<AdminDetailsVIew>();
-            adminDetailsView.AddRange(adminDetails.Select(ad => new AdminDetailsVIew { Name = ad.Name, Id = ad.Id, Email = ad.Email, Password = ad.Password, Username = ad.Username, AdminUserRoles = ad.AdminUserRoles.Select(add => new AdminUserRoleView { AdminUserId = add.AdminUserId, Role = new RoleView { RoleName = add.Role.RoleName} }).ToList() }));
+            adminDetailsView.AddRange(
+                adminDetails.Select(
+                    ad => new AdminDetailsVIew
+                    {
+                        Name = ad.Name,
+                        Id = ad.Id,
+                        Email = ad.Email,
+                        Password = ad.Password,
+                        Username = ad.Username,
+                        AdminUserRoles = ad.AdminUserRoles.Select
+                        (add => new AdminUserRoleView
+                        {
+                            AdminUserId = add.AdminUserId,
+                            Role = new RoleView
+                            {
+                                RoleName = add.Role.RoleName
+                            }
+                        }).ToList()
+                    }));
             return adminDetailsView;
         }
         public AdminDetailsVIew GetSingleAdminDetails(int id)
@@ -39,7 +57,7 @@ namespace PMS_SERVICE.Services
                     AdminUserId = ad.AdminUserId,
                     AdminRoleId = ad.AdminRoleId,
                     Id = ad.Id
-                }).Where(add =>add.AdminUserId == adminDetails.Id).ToList(),
+                }).ToList(),
             };
             
             return adminDetailsView;

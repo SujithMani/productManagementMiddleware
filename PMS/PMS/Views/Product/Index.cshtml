@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Models.ViewModels.ProductCategoryView>
+﻿@model IEnumerable<Models.ViewModels.ProductView>
 
 @{
     ViewBag.Title = "Index";
@@ -11,17 +11,59 @@
 </p>
 <table class="table">
     <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sku)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Keyword)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Image)
+        </th>
+        <th>
+            @Html.DisplayName("Category")
+        </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            @Html.DisplayFor(modelitem => item.ProductName)
         </td>
-    </tr>
+        <td>
+            @Html.DisplayFor(modelitem => item.Sku)
+        </td>
+        <td>
+            @Html.DisplayFor(modelitem => item.Keyword)
+        </td>
+        <td>
+            @Html.DisplayFor(modelitem => item.Description)
+        </td>
+        <td>
+            <img src="@Url.Content(item.Image)" class="img-responsive" width="200" height="200" />
+        </td>
+        <td>
+            @foreach (var items in item.MainCategoryProducts)
+            {
+
+                @items.MainCategory.CategoryName
+                <br />
+
+            }
+        </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
 }
 
 </table>

@@ -16,7 +16,15 @@ namespace PMS.Controllers
         // GET: Product
         public ActionResult Index()
         {
-            return View();
+            if (Session["username"] != null)
+            {
+                List<ProductView> products = productService.GetAllMainCategory();
+                return View("Index", "_LayoutAdmin", products);
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
         }
 
         // GET: Product/Details/5
@@ -57,6 +65,10 @@ namespace PMS.Controllers
                         string filename = Path.GetFileNameWithoutExtension(categoryView.product.ImageFile.FileName);
                         string extension = Path.GetExtension(categoryView.product.ImageFile.FileName);
                         filename = filename + DateTime.Now.ToString("yymmssfff") + extension;
+                        categoryView.product.Image = "~/Images/" + filename;
+                        filename = Path.Combine(Server.MapPath("~/Images/"), filename);
+                        categoryView.product.ImageFile.SaveAs(filename);
+
                         int res = productService.InsertProduct(categoryView.product);
                         if (res != 0)
                         {

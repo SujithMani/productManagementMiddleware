@@ -25,7 +25,7 @@ namespace Models.ViewModels
         public HttpPostedFileBase ImageFile { get; set; }
         public int Status { get; set; }
         public int InvokerStatus { get; set; }
-        public ICollection<MainCategoryProductView> MainCategoryProducts { get; set; }
-        public ICollection<OfferProductView> OfferProducts { get; set; }
+        public virtual ICollection<MainCategoryProductView> MainCategoryProducts { get; set; }
+        public virtual ICollection<OfferProductView> OfferProducts { get; set; }
     }
 }
