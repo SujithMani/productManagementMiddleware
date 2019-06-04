@@ -25,9 +25,12 @@ namespace PMS_SERVICE.Services
         {
             string username = user1.User_Name;
             string password = user1.User_Password;
+           
 
             if (username != null && password != null)
             {
+                User_Registration_View user2 = new User_Registration_View();
+               
                 bool User_Login = Reg.User_Check(user1);
                 return User_Login;
             }
@@ -36,23 +39,18 @@ namespace PMS_SERVICE.Services
                 return false;
             }
         }
+        
+        public User_Registration_View User_By_Username(string userName)
+        {
+            User_Registration userDetails = Reg.User_By_Username(userName);
+            User_Registration_View User = new User_Registration_View {
+                User_Email_Id=userDetails.User_Email_Id,
+                Phone_Number=userDetails.Phone_Number  
+            };
 
-        //public bool CheckData(User_Login_View user1)
-        //{
-            
-        //   // bool Result = Reg.Login_User(user1);
-        //    if (user1.User_Name != null && user1.User_Password != null)
-        //    {
-        //        bool User_Login = Reg.User_Check(user1);
-               
-        //            return true;
-                      
-        //    }
-        //    else
-        //    {
-        //        return false;
-        //    }
-        //}
+            return User;
+        }
+       
     }
 }
 

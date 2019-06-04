@@ -22,3 +22,15 @@ select,
 textarea {
     max-width: 280px;
 }
+.removedot ul {
+    list-style-type : none;
+}
+.textbox{
+    display:inline;
+    text-align:center;
+}
+
+.dropdown-menu {
+    margin: 1px -94px 0px;
+    text-align:center;
+}

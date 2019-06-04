@@ -13,8 +13,9 @@
 
     <div class="col-md-12">
 
-        @Html.TextBoxFor(m => m.User_Name, new { @placeholder = "Username", @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.User_Name, "", new { @class = "text-danger  " })
+        @Html.TextBoxFor(m => m.User_Name, new { @placeholder = "Username", @class = "form-control textbox" })
+        <br />
+        @Html.ValidationMessageFor(m => m.User_Name, "", new { @class = "text-danger " })
     </div>
 
 
@@ -22,7 +23,8 @@
     <div class="form-group">
         <div class="col-md-12">
 
-            @Html.TextBoxFor(m => m.User_Password, new { @placeholder = "Password", @class = "form-control" })
+            @Html.TextBoxFor(m => m.User_Password, new { @placeholder = "Password", @class = "form-control textbox" })
+            <br />
             @Html.ValidationMessageFor(m => m.User_Password, "", new { @class = "text-danger " })
         </div>
     </div>
@@ -30,13 +32,17 @@
 
     <br /><br /><br />
     <input id="Submit1" type="submit" value="Login" />
-    @*@using (Html.BeginForm("Login", "User", FormMethod.Post)*@
-        <br /><br /><br />
-            @*@Html.ValidationSummary(false,"", htmlAttributes: new { @class = "text-danger" })*@
-            New to PMS?
+    
+    <br /><br /><br />
+    <span class="removedot">
+        <b>
+            @Html.ValidationSummary(true, "", htmlAttributes: new { @class = "text-danger " })
+        </b>
+    </span>
+    New to PMS?
     @Html.ActionLink("Register", "Registration")
-            new Account.
-</form >
-@*</div>*@
+    new Account.
+</form>
+
 
 

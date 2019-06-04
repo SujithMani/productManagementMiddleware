@@ -24,9 +24,9 @@ namespace Models.ViewModels.Clients_ViewModels
         [Display(Name ="Username")]
         public string User_Name { get; set; }
         [Required]
-        [EmailAddress]
-        [Display(Name ="Email ID")]
-        public string User_Email_Id { get; set; }
+         [EmailAddress]
+         [Display(Name ="Email ID")]
+         public string User_Email_Id { get; set; }
         [Required]
         [DataType(DataType.MultilineText, ErrorMessage = "Enter User Address")]
         [Display(Name = "Address")]

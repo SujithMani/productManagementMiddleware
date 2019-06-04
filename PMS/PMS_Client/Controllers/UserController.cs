@@ -29,27 +29,43 @@ namespace PMS_Client.Controllers
             if (ModelState.IsValid)
             {
                 bool res = reg.Login_User(user_Login);
-                if(res==true)
+
+                  if (res == true)
                 {
-                    //TempData["Login"] = "user_Login:{0}";
-                    return RedirectToAction("Registration");
+                    User_Registration_View user_Login2 = new User_Registration_View();
+                    user_Login2 = reg.User_By_Username(user_Login.User_Name);
+
+
+                    //var profileData = new User_Login_View
+                    //{
+                    //    User_Name = user_Login.User_Name,
+                    //    User_Email_Id = user_Login.User_Email_Id,
+                    //    Phone_Number = user_Login.Phone_Number
+                    //};
+                    //  this.Session["Login"] = user_Login.User_Name;
+                   
+                    Session["Login"] = user_Login.User_Name;
+                    Session["Email"] = user_Login2.User_Email_Id;
+                    Session["Mobile"] = user_Login2.Phone_Number;
+                    return View();
                 }
                 else
                 {
-
+                    ModelState.AddModelError(string.Empty, "Invalid credentials");
+                    return View(user_Login);
                 }
+                
             }
+
             else
             {
                 ModelState.AddModelError(string.Empty, "Invalid credentials");
                 return View(user_Login);
             }
-            return View(user_Login);
+           
         }
 
-
-
-
+       
         #region Register
 
         //

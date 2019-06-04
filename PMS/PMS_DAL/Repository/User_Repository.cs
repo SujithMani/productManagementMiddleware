@@ -22,7 +22,15 @@ namespace PMS_DAL.Repository
             {
                 User_Registration User_Login = DB.User_Registration.Where(u => u.User_Name == user1.User_Name
                       && u.User_Password == user1.User_Password).FirstOrDefault();
-                return true;
+                 if(User_Login!=null)
+                {
+                    return true;
+                }
+                 else
+                {
+                    return false;
+                }
+                
             }
             catch(Exception t)
             {
@@ -112,7 +120,11 @@ namespace PMS_DAL.Repository
                 }
             }
 
-
+        public User_Registration User_By_Username(string userName)
+        {
+            User_Registration userDetails = DB.User_Registration.Where(det => det.User_Name == userName).FirstOrDefault();
+            return userDetails;
+        }
 
             //public List<User_Registration> user_read_by_id(int id)
             //{
