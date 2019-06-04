@@ -72,23 +72,29 @@ namespace PMS_DAL.Repository
             {
                 if (roleView.AdminUserId != 0 && roleView.AdminRoleId != 0)
                 {
-                    AdminUserRole AdminUserRoleDetails = DB.AdminUserRole.Where(ad => ad.AdminRoleId == roleView.AdminRoleId && ad.AdminUserId == roleView.AdminUserId).FirstOrDefault();
-                    if (AdminUserRoleDetails != null)
-                    {
-                        AdminUserRoleDetails.AdminUserId = roleView.AdminUserId;
-                        AdminUserRoleDetails.AdminRoleId = roleView.AdminRoleId;
-                        DB.SaveChanges();
-                        return true;
-                    }
-                    else
-                    {
+                    //List<AdminUserRole> AdminUserRoleDetails = DB.AdminUserRole.Where(ad => ad.AdminUserId == roleView.AdminUserId).ToList();
+                    //if (AdminUserRoleDetails.Count() != 0)
+                    //{
+                    //    foreach (var item in AdminUserRoleDetails)
+                    //    {
+                    //        DB.AdminUserRole.Remove(item);
+                    //        DB.SaveChanges();
+                    //    }
+                    //    //AdminUserRole  AdminUserRoleDetailsEdit = new
+                    //    //AdminUserRoleDetails.AdminUserId = roleView.AdminUserId;
+                    //    //AdminUserRoleDetails.AdminRoleId = roleView.AdminRoleId;
+                        
+                    //    //return true;
+                    //}
+                    //else
+                    //{
                         AdminUserRole adminUserRole = new AdminUserRole();
                         adminUserRole.AdminUserId = roleView.AdminUserId;
                         adminUserRole.AdminRoleId = roleView.AdminRoleId;
                         DB.AdminUserRole.Add(adminUserRole);
                         DB.SaveChanges();
                         return true;
-                    }
+                    //}
                     
                 }
                 else

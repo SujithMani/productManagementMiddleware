@@ -24,6 +24,18 @@ namespace PMS_DAL.Repository
                 return null;
             }
         }
+        public Product GetSingleProduct(int Id)
+        {
+            try
+            {
+                Product Product = DB.Product.Find(Id);
+                return Product;
+            }
+            catch
+            {
+                return null;
+            }
+        }
         public int InsertProduct(ProductView ProductDetails)
         {
             int CurrentId = ProductDetails.Id;

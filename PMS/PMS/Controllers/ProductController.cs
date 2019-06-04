@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using Models.ViewModels;
+﻿using Models.ViewModels;
 using PMS_SERVICE.Services;
+using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Web.Mvc;
 
 namespace PMS.Controllers
 {
@@ -30,7 +28,18 @@ namespace PMS.Controllers
         // GET: Product/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            if(Session["username"] != null)
+            {
+                ProductView product_cat = new ProductView();
+                product_cat = productService.GetSingleProduct(id);
+                //List<MainCategoryView> category = categorySevice.GetAllMainCategory();
+                //roduct_cat.category = category;
+                return View("Details", "_LayoutAdmin", product_cat);
+            }
+            else
+            {
+                return RedirectToAction("Index","Home");
+            }
         }
 
         // GET: Product/Create
@@ -123,29 +132,125 @@ namespace PMS.Controllers
         // GET: Product/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            if (Session["username"] != null)
+            {
+                ProductCategoryView product_cat = new ProductCategoryView();
+                product_cat.product = productService.GetSingleProduct(id);
+                List<MainCategoryView> category = categorySevice.GetAllMainCategory();
+                product_cat.category = category;
+                return View("Edit", "_LayoutAdmin", product_cat);
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
         }
 
         // POST: Product/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(ProductCreateRequestView categoryView)
         {
-            try
+            ProductCategoryView product_cat = new ProductCategoryView();
+            if (Session["username"] != null)
             {
-                // TODO: Add update logic here
+                try
+                {
+                    product_cat.product = productService.GetSingleProduct(categoryView.product.Id);
+                    List<MainCategoryView> category = categorySevice.GetAllMainCategory();
+                    product_cat.category = category;
+                    if (ModelState.IsValid)
+                    {
+                        string filename = Path.GetFileNameWithoutExtension(categoryView.product.ImageFile.FileName);
+                        string extension = Path.GetExtension(categoryView.product.ImageFile.FileName);
+                        filename = filename + DateTime.Now.ToString("yymmssfff") + extension;
+                        categoryView.product.Image = "~/Images/" + filename;
+                        filename = Path.Combine(Server.MapPath("~/Images/"), filename);
+                        categoryView.product.ImageFile.SaveAs(filename);
 
-                return RedirectToAction("Index");
+                        int res = productService.InsertProduct(categoryView.product);
+                        if (res != 0)
+                        {
+                            int productId = res;
+                            bool deleteCategoryByProduct = productService.DeleteCategoryByProduct(productId);
+                            foreach (int role in categoryView.category)
+                            {
+                                MainCategoryProductView categoryProductView = new MainCategoryProductView { CategoryId = role, ProductId = productId };
+                                bool result = productService.InsertProductCategory(categoryProductView);
+                                if (result)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    break;
+                                }
+                            }
+                        }
+                        else
+                        {
+                            //List<MainCategoryView> categories = categorySevice.GetAllMainCategory();
+                            //product_cat.category = categories;
+                            ModelState.AddModelError(string.Empty, "Something happend");
+                            return View("Edit", "_LayoutAdmin", product_cat);
+                        }
+
+
+                    }
+                    else
+                    {
+                        //List<MainCategoryView> categories = categorySevice.GetAllMainCategory();
+                        //product_cat.category = categories;
+                        return View("Edit", "_LayoutAdmin", product_cat);
+                    }
+                    // TODO: Add insert logic here
+
+                    return RedirectToAction("Index");
+                }
+                catch
+                {
+                    //List<MainCategoryView> categories = categorySevice.GetAllMainCategory();
+                    //product_cat.category = categories;
+                    return View("Edit", "_LayoutAdmin", product_cat);
+                }
             }
-            catch
+            else
             {
-                return View();
+                return RedirectToAction("Index", "Home");
             }
         }
 
         // GET: Product/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            if (Session["username"] != null)
+            {
+                bool deleteProduct = productService.DeleteProduct(id);
+                if (deleteProduct)
+                {
+                    bool deleteCategoryByProduct = productService.DeleteCategoryByProduct(id);
+
+                    if (deleteCategoryByProduct)
+                    {
+                        return RedirectToAction("Index");
+                    }
+                    else
+                    {
+                        return RedirectToAction("Index");
+                    }
+                }
+                else
+                {
+                    List<ProductView> products = productService.GetAllMainCategory();
+                    ModelState.AddModelError(string.Empty, "Something happend");
+                    return View("Index", "_LayoutAdmin", products);
+                }
+
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
         }
 
         // POST: Product/Delete/5

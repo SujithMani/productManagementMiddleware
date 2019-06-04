@@ -176,6 +176,7 @@ namespace PMS.Controllers
                         if (res != 0)
                         {
                             int adminId = res;
+                            bool deleteAlreadyRoles = adminUserRoleService.DeleteRoleByAdmin(adminId);
                             foreach (int role in adminCreate.roles)
                             {
                                 AdminUserRoleService adminUserRoleService = new AdminUserRoleService();
