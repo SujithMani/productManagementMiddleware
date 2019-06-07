@@ -14,8 +14,16 @@ namespace PMS.Controllers
         // GET: Privillage
         public ActionResult Index()
         {
-            List<PrivilegeView> privilegeViews = privillageService.GetAllPrivillages();
-            return View("Index","_LayoutAdmin",privilegeViews);
+            if (Session["username"] != null)
+            {
+                List<PrivilegeView> privilegeViews = privillageService.GetAllPrivillages();
+                return View("Index", "_LayoutAdmin", privilegeViews);
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            
         }
 
         // GET: Privillage/Details/5

@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using PMS_SERVICE.Services;
 using PMS.Controllers;
 using Models.ViewModels;
+using System.Web.Security;
 
 namespace PMS.Controllers
 {
@@ -35,6 +36,8 @@ namespace PMS.Controllers
                 if (result)
                 {
                     Session["username"] = user.Username;
+                    //FormsAuthentication.SetAuthCookie(user.Username, false);
+                    //FormsAuthentication.SignOut();
                     return RedirectToAction("Home");
 
                 }
@@ -70,6 +73,7 @@ namespace PMS.Controllers
             if (Session["username"] != null)
             {
                 Session.Remove("username");
+                Session.Clear();
                 return RedirectToAction("Index");
             }
             else

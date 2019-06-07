@@ -54,6 +54,7 @@ namespace PMS.Controllers
         // POST: PageDetails/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [ValidateInput(false)]
         public ActionResult Create(PageDetailsView pageDetails)
         {
             if (Session["username"] != null)

@@ -17,8 +17,15 @@ namespace PMS.Controllers
         private RoleDetailService roleDetailService = new RoleDetailService();
         public ActionResult Index()
         {
-            List<AdminDetailsVIew> adminDetails= adminDetailsService.GetAdminDetails();
-            return View("Index", "_LayoutAdmin", adminDetails);
+            if (Session["username"] != null)
+            {
+                List<AdminDetailsVIew> adminDetails = adminDetailsService.GetAdminDetails();
+                return View("Index", "_LayoutAdmin", adminDetails);
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
         }
         // GET: Admin/Details/5
         public ActionResult Details(int id)

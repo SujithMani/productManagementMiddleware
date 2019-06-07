@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using PMS_SERVICE.Services;
 using Models.ViewModels;
+using PMS.Security;
 
 namespace PMS.Controllers
 {
@@ -12,10 +13,19 @@ namespace PMS.Controllers
     {
         private MainCategorySevice mainCategorySevice = new MainCategorySevice();
         // GET: Privillage
+        [CustomAuthentication(Role = "Admind")]
         public ActionResult Index()
         {
-            List<MainCategoryView> MainCategoryViews = mainCategorySevice.GetAllMainCategory();
-            return View("Index", "_LayoutAdmin", MainCategoryViews);
+            if (Session["username"] != null)
+            {
+                List<MainCategoryView> MainCategoryViews = mainCategorySevice.GetAllMainCategory();
+                return View("Index", "_LayoutAdmin", MainCategoryViews);
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            
         }
 
         // GET: Privillage/Details/5
