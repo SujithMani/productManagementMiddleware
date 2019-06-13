@@ -87,8 +87,6 @@ E:\Uwpproductmanagement\PMS\PMS\PMS\bin\PMS_DAL.pdb
 E:\Uwpproductmanagement\PMS\PMS\PMS\bin\PMS_DAL.dll.config
 E:\Uwpproductmanagement\PMS\PMS\PMS\bin\PMS_SERVICE.dll
 E:\Uwpproductmanagement\PMS\PMS\PMS\bin\PMS_SERVICE.pdb
-E:\Attinad_Projects\Product_Management\PMS\PMS\obj\Debug\PMS.csproj.CoreCompileInputs.cache
-E:\Attinad_Projects\Product_Management\PMS\PMS\obj\Debug\PMS.csprojAssemblyReference.cache
 E:\Attinad_Projects\Product_Management\PMS\PMS\bin\PMS.dll.config
 E:\Attinad_Projects\Product_Management\PMS\PMS\bin\PMS.dll
 E:\Attinad_Projects\Product_Management\PMS\PMS\bin\PMS.pdb
@@ -175,6 +173,8 @@ E:\Attinad_Projects\Product_Management\PMS\PMS\bin\Microsoft.AspNet.TelemetryCor
 E:\Attinad_Projects\Product_Management\PMS\PMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 E:\Attinad_Projects\Product_Management\PMS\PMS\bin\PMS_DAL.pdb
 E:\Attinad_Projects\Product_Management\PMS\PMS\bin\PMS_DAL.dll.config
+E:\Attinad_Projects\Product_Management\PMS\PMS\obj\Debug\PMS.csprojAssemblyReference.cache
+E:\Attinad_Projects\Product_Management\PMS\PMS\obj\Debug\PMS.csproj.CoreCompileInputs.cache
 E:\Attinad_Projects\Product_Management\PMS\PMS\obj\Debug\PMS.csproj.CopyComplete
 E:\Attinad_Projects\Product_Management\PMS\PMS\obj\Debug\PMS.dll
 E:\Attinad_Projects\Product_Management\PMS\PMS\obj\Debug\PMS.pdb

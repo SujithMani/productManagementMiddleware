@@ -28,7 +28,7 @@ namespace PMS_Client
             // Extra Added line on 15-05-2019
             // JQuery validator.   
             bundles.Add(new ScriptBundle("~/bundles/custom-validator").Include(
-                                  "~/Scripts/script-custom-validator.js"));
+                                  "~/Scripts/jquerycustomvalidator.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",

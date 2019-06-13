@@ -29,5 +29,7 @@ namespace Models.ViewModels.Clients_ViewModels
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
         public string User_Password { get; set; }
+
+
     }
 }

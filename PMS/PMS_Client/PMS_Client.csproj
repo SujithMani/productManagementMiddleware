@@ -162,6 +162,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jquerycustomvalidator.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -211,6 +212,10 @@
     <ProjectReference Include="..\Models\Models.csproj">
       <Project>{f8d95b28-bd2c-4f82-8365-c6250a1a7dc1}</Project>
       <Name>Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PMS_DAL\PMS_DAL.csproj">
+      <Project>{B5C0587A-7938-450F-85E1-701AA0E33B05}</Project>
+      <Name>PMS_DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\PMS_SERVICE\PMS_SERVICE.csproj">
       <Project>{abc330c6-aa46-46d0-b1a1-63241a484f32}</Project>

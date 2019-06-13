@@ -50,38 +50,42 @@
                             string userName = Session["Login"].ToString();
                             string userEmail = Session["Email"].ToString();
                             string userMobile = Session["Mobile"].ToString();
-                            @Html.ActionLink(userName, "", "");
+
+                            @Html.ActionLink(userName, "", "")
 
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                                 <span class="glyphicon glyphicon-user"></span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Email</a></li>                               
-                                @Html.ActionLink(userEmail, "", "");
+                                <li><a href="#"></a></li>
+                                @Html.ActionLink(userEmail, "", "")
 
-                                <li><a href="#">Mobile</a></li>                                
-                                @Html.ActionLink(userMobile, "", "");
-                            </ul>
+                                <li><a href="#"></a></li>
+                                @Html.ActionLink(userMobile, "", "")
+
+                                <li><a href="#"></a></li>
+                                @Html.ActionLink("Log Out", "Logout", "User")
+                            </ul>                                                       
                         </li>
                     }
-                      
+
                     </ul>
 
+                </div>
             </div>
         </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My PMS Application</p>
-        </footer>
-    </div>
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - My PMS Application</p>
+            </footer>
+        </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @Scripts.Render("~/bundles/jqueryval")
-    @RenderSection("scripts", required: false)
-</body>
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @Scripts.Render("~/bundles/jqueryval")
+        @RenderSection("scripts", required: false)
+    </body>
 </html>

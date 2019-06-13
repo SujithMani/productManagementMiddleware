@@ -2,27 +2,31 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
+using System.Web.Security;
 using Models.ViewModels.Clients_ViewModels;
 using PMS_SERVICE.Services;
 
 namespace PMS_Client.Controllers
 {
     public class UserController : Controller
+
     {
         private Client_ManagementService reg = new Client_ManagementService();
+      
         // GET: User
         public ActionResult Index()
         {
             return View();
         }
         public ActionResult Login()
-        {          
+        {
             return View();
         }
 
         [HttpPost]
-       // [AllowAnonymous]
+        // [AllowAnonymous]
         //[ValidateAntiForgeryToken]
         public ActionResult Login(User_Login_View user_Login)
         {
@@ -30,7 +34,7 @@ namespace PMS_Client.Controllers
             {
                 bool res = reg.Login_User(user_Login);
 
-                  if (res == true)
+                if (res == true)
                 {
                     User_Registration_View user_Login2 = new User_Registration_View();
                     user_Login2 = reg.User_By_Username(user_Login.User_Name);
@@ -43,7 +47,7 @@ namespace PMS_Client.Controllers
                     //    Phone_Number = user_Login.Phone_Number
                     //};
                     //  this.Session["Login"] = user_Login.User_Name;
-                   
+
                     Session["Login"] = user_Login.User_Name;
                     Session["Email"] = user_Login2.User_Email_Id;
                     Session["Mobile"] = user_Login2.Phone_Number;
@@ -54,7 +58,7 @@ namespace PMS_Client.Controllers
                     ModelState.AddModelError(string.Empty, "Invalid credentials");
                     return View(user_Login);
                 }
-                
+
             }
 
             else
@@ -62,10 +66,17 @@ namespace PMS_Client.Controllers
                 ModelState.AddModelError(string.Empty, "Invalid credentials");
                 return View(user_Login);
             }
-           
+
         }
 
-       
+        public ActionResult LogOut()
+        {
+            FormsAuthentication.SignOut();
+            Session.Clear();
+            return RedirectToAction("Index", "Home");
+        }
+
+
         #region Register
 
         //
@@ -83,23 +94,37 @@ namespace PMS_Client.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Registration(User_Registration_View user_Registration)
         {
-                if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 bool res = reg.InsertData(user_Registration);
-                if (res==true)
+                if (res == true)
                 {
-                    
+                    return RedirectToAction("Login", "User");
                 }
                 else
                 {
-
+                    return View(user_Registration);
                 }
             }
             return View(user_Registration);
         }
-
         #endregion
 
+        [HttpPost]
+        public JsonResult CheckUsername(string user)
+        {
+            bool res1 = reg.UsernameCheck(user);
 
-    }
+            return Json(res1);
+        }
+
+        [HttpPost]
+        public JsonResult CheckUsermail(string email)
+        {
+            bool res2 = reg.EmailCheck(email);
+
+            return Json(res2);
+        }
+    }   
+
 }

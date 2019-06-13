@@ -50,7 +50,36 @@ namespace PMS_SERVICE.Services
 
             return User;
         }
+         
        
+
+        public bool UsernameCheck(string user)
+        {
+            try
+            {
+                bool res1 = Reg.Username_Check(user);
+                return res1;
+            }
+            catch
+            {
+                throw new NotImplementedException();
+            }
+            
+        }
+
+        public bool EmailCheck(string email)
+        {
+            try
+            {
+                bool res2 = Reg.UserEmail_Check(email);
+                return res2;
+            }
+            catch
+            {
+                throw new NotImplementedException();
+            }
+
+        }
     }
 }
 
