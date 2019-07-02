@@ -36,7 +36,7 @@ namespace Models.ViewModels.Clients_ViewModels
         [Display(Name ="Phone No.")]
         public string Phone_Number { get; set; }
         [Required]
-        [StringLength(100, ErrorMessage = "Enter a password with 1capital letter, 1alphanumeric character", MinimumLength =6)]
+        [StringLength(100, ErrorMessage = "Invalid Username or Password", MinimumLength =6)]
         [DataType(DataType.Password)]
         [Display(Name ="Password")]
         public string User_Password { get; set; }

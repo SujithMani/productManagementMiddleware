@@ -22,7 +22,7 @@ namespace PMS_DAL.Models
         public string User_Address { get; set; }
         [Required(ErrorMessage = "Incorrect Phone Number")]
         public string Phone_Number { get; set; }
-        [Required(ErrorMessage = "Enter a password with capital letter, alphanumeric character and punctuations")]
+        [Required(ErrorMessage = "Incorrect Password")]
         public string User_Password { get; set; }
         [Required(ErrorMessage = "Enter password to Confirm ")]
         [NotMapped()]

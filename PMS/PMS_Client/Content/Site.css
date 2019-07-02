@@ -1,6 +1,6 @@
 ﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+    /*padding-top: 50px;*/
+    /*padding-bottom: 20px;*/
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -33,4 +33,12 @@ textarea {
 .dropdown-menu {
     margin: 1px -94px 0px;
     text-align:center;
+}
+
+.margin_right{
+    margin-right : 10px;
+}
+
+.margin_left{
+    margin-left : 523px;
 }

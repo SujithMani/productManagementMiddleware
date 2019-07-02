@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Web;
 using System.Web.Helpers;
 using System.Web.Mvc;
 using System.Web.Security;
 using Models.ViewModels.Clients_ViewModels;
+
 using PMS_SERVICE.Services;
 
 namespace PMS_Client.Controllers
@@ -13,13 +15,19 @@ namespace PMS_Client.Controllers
     public class UserController : Controller
 
     {
+        
+
         private Client_ManagementService reg = new Client_ManagementService();
-      
+
         // GET: User
         public ActionResult Index()
         {
+            //Context DB = new Context();
+
             return View();
         }
+
+        #region Login
         public ActionResult Login()
         {
             return View();
@@ -29,12 +37,12 @@ namespace PMS_Client.Controllers
         // [AllowAnonymous]
         //[ValidateAntiForgeryToken]
         public ActionResult Login(User_Login_View user_Login)
-        {
+        {  
             if (ModelState.IsValid)
             {
                 bool res = reg.Login_User(user_Login);
 
-                if (res == true)
+                if (res == true) 
                 {
                     User_Registration_View user_Login2 = new User_Registration_View();
                     user_Login2 = reg.User_By_Username(user_Login.User_Name);
@@ -51,7 +59,7 @@ namespace PMS_Client.Controllers
                     Session["Login"] = user_Login.User_Name;
                     Session["Email"] = user_Login2.User_Email_Id;
                     Session["Mobile"] = user_Login2.Phone_Number;
-                    return View();
+                    return RedirectToAction("PMS", "Home");
                 }
                 else
                 {
@@ -60,14 +68,15 @@ namespace PMS_Client.Controllers
                 }
 
             }
-
             else
             {
-                ModelState.AddModelError(string.Empty, "Invalid credentials");
-                return View(user_Login);
+              //  ModelState.AddModelError(string.Empty, "Invalid credentials");
+                return RedirectToAction("PMS", "Home");
             }
+            
 
         }
+        #endregion
 
         public ActionResult LogOut()
         {
@@ -106,7 +115,7 @@ namespace PMS_Client.Controllers
                     return View(user_Registration);
                 }
             }
-            return View(user_Registration);
+            return RedirectToAction("Login", "User");
         }
         #endregion
 
@@ -125,6 +134,9 @@ namespace PMS_Client.Controllers
 
             return Json(res2);
         }
-    }   
+         
+        Context DB=new Context()
+
+    }
 
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Models.ViewModels.Clients_ViewModels
 {
-    [Serializable]
+    //[Serializable]
     public class User_Login_View
     {
        
